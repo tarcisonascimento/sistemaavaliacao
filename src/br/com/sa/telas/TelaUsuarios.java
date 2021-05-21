@@ -307,6 +307,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.setBackground(new java.awt.Color(255, 247, 241));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(612, 451));
 
+        txtUsoEndereco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoEndereco.setEnabled(false);
         jDesktopPane1.add(txtUsoEndereco);
         txtUsoEndereco.setBounds(150, 195, 451, 32);
@@ -345,6 +346,8 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(jLabel5);
         jLabel5.setBounds(73, 233, 73, 32);
 
+        txtUsoCidade.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtUsoCidade.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtUsoCidade.setEnabled(false);
         jDesktopPane1.add(txtUsoCidade);
         txtUsoCidade.setBounds(150, 235, 226, 32);
@@ -355,7 +358,8 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(jLabel6);
         jLabel6.setBounds(86, 313, 60, 32);
 
-        txtUsoCref.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsoCref.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtUsoCref.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtUsoCref.setEnabled(false);
         jDesktopPane1.add(txtUsoCref);
         txtUsoCref.setBounds(150, 355, 226, 32);
@@ -387,6 +391,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(btnUsoBusca);
         btnUsoBusca.setBounds(475, 11, 70, 34);
 
+        txtUsoBusca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsoBuscaActionPerformed(evt);
@@ -441,6 +446,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(btnUsoAdd);
         btnUsoAdd.setBounds(620, 154, 179, 39);
 
+        txtUsoNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoNome.setEnabled(false);
         jDesktopPane1.add(txtUsoNome);
         txtUsoNome.setBounds(151, 155, 450, 32);
@@ -480,8 +486,9 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtUsoContrato.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsoContrato.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtUsoContrato.setEnabled(false);
+        txtUsoContrato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDesktopPane1.add(txtUsoContrato);
         txtUsoContrato.setBounds(150, 400, 226, 32);
 
@@ -490,8 +497,9 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtUsoCelular.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsoCelular.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtUsoCelular.setEnabled(false);
+        txtUsoCelular.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDesktopPane1.add(txtUsoCelular);
         txtUsoCelular.setBounds(150, 315, 226, 32);
 
@@ -506,16 +514,19 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtUsoCpf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsoCpf.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtUsoCpf.setEnabled(false);
+        txtUsoCpf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDesktopPane1.add(txtUsoCpf);
         txtUsoCpf.setBounds(150, 275, 226, 32);
 
+        txtUsoSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsoSenha.setEnabled(false);
         jDesktopPane1.add(txtUsoSenha);
         txtUsoSenha.setBounds(580, 360, 226, 32);
 
+        txtUsoLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsoLogin.setEnabled(false);
         jDesktopPane1.add(txtUsoLogin);
@@ -527,6 +538,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(jLabel10);
         jLabel10.setBounds(510, 320, 65, 32);
 
+        tblUsoBusca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tblUsoBusca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -551,6 +563,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         jDesktopPane1.add(jScrollPane1);
         jScrollPane1.setBounds(22, 51, 781, 91);
 
+        txtUsoMatricula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtUsoMatricula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsoMatricula.setEnabled(false);
         txtUsoMatricula.addActionListener(new java.awt.event.ActionListener() {

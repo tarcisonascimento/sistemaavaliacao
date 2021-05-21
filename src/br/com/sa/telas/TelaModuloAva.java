@@ -26,9 +26,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
     ResultSet rs = null;//exibe o resultado das instruçoes sql que sera usado no java
 
     GerenciadorDeJanelas gerenciadorDeJanela; //variavel para trabalhar com o gerenciador de janelas
-    
-    
-    
+
     //as variaveis abaixo armazenam os dados do usuario do sistema para reabrir a janela.  
     public static String NomeUso = null, PerfilAcesso = null, DataAcesso = null;
 
@@ -230,7 +228,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
         }
 
     }
-    String condicao;
+    String condicao = "";
 
     public void setcamposcardio() {
 
@@ -243,7 +241,113 @@ public class TelaModuloAva extends javax.swing.JFrame {
 
             if (rs.next()) {
 
-                TelaAvaCardiopulmonares.cmbProtAero.setSelectedItem(rs.getString(112));
+                if (rs.getString(112) != null) {
+                    TelaAvaCardiopulmonares.cmbProtAero.setSelectedItem(rs.getString(112));
+                }
+                if (rs.getString(113) != null) {
+                    condicao = rs.getString(113);
+                }
+                if (rs.getString(114) != null) {
+                    TelaAvaCardiopulmonares.txtMin.setText(rs.getString(114));
+                }
+                if (rs.getString(115) != null) {
+                    TelaAvaCardiopulmonares.txtSeg.setText(rs.getString(115));
+                }
+                if (rs.getString(116) != null) {
+                    TelaAvaCardiopulmonares.txtDist.setText(rs.getString(116));
+                }
+                if (rs.getString(117) != null) {
+                    TelaAvaCardiopulmonares.txtPotencia.setText(rs.getString(117));
+                }
+                if (rs.getString(118) != null) {
+                    TelaAvaCardiopulmonares.txtEstagio.setText(rs.getString(118));
+                }
+                if (rs.getString(119) != null) {
+                    TelaAvaCardiopulmonares.txtFcQuart.setText(rs.getString(119));
+                }
+                if (rs.getString(120) != null) {
+                    TelaAvaCardiopulmonares.txtFcQuint.setText(rs.getString(120));
+                }
+                if (rs.getString(121) != null) {
+                    TelaAvaCardiopulmonares.txtFcBpm.setText(rs.getString(121));
+                }
+                if (rs.getString(12) != null) {
+                    TelaAvaCardiopulmonares.lblVo2.setText(rs.getString(12));
+                }
+                if (rs.getString(122) != null) {
+                    TelaAvaCardiopulmonares.lblClassificado.setText(rs.getString(122));
+                }
+                if (rs.getString(123) != null) {
+                    TelaAvaCardiopulmonares.cmbLatica.setSelectedItem(rs.getString(123));
+                }
+                if (rs.getString(124) != null) {
+                    TelaAvaCardiopulmonares.txtT1.setText(rs.getString(124));
+                }
+                if (rs.getString(125) != null) {
+                    TelaAvaCardiopulmonares.txtT2.setText(rs.getString(125));
+                }
+                if (rs.getString(126) != null) {
+                    TelaAvaCardiopulmonares.txtT3.setText(rs.getString(126));
+                }
+                if (rs.getString(127) != null) {
+                    TelaAvaCardiopulmonares.txtT4.setText(rs.getString(127));
+                }
+                if (rs.getString(128) != null) {
+                    TelaAvaCardiopulmonares.txtT5.setText(rs.getString(128));
+                }
+                if (rs.getString(129) != null) {
+                    TelaAvaCardiopulmonares.txtT6.setText(rs.getString(129));
+                }
+                if (rs.getString(130) != null) {
+                    TelaAvaCardiopulmonares.txtT7.setText(rs.getString(130));
+                }
+                if (rs.getString(131) != null) {
+                    TelaAvaCardiopulmonares.txtT8.setText(rs.getString(131));
+                }
+                if (rs.getString(132) != null) {
+                    TelaAvaCardiopulmonares.txtT9.setText(rs.getString(132));
+                }
+                if (rs.getString(133) != null) {
+                    TelaAvaCardiopulmonares.txtT10.setText(rs.getString(133));
+                }
+                if (rs.getString(134) != null) {
+                    TelaAvaCardiopulmonares.txtLatDist.setText(rs.getString(134));
+                }
+                if (rs.getString(135) != null) {
+                    TelaAvaCardiopulmonares.lblIf.setText(rs.getString(135));
+                }
+                if (rs.getString(136) != null) {
+                    TelaAvaCardiopulmonares.lbllatClass.setText(rs.getString(136));
+                }
+                if (rs.getString(137) != null) {
+                    TelaAvaCardiopulmonares.cmbPanaal.setSelectedItem(rs.getString(137));
+                }
+                if (rs.getString(138) != null) {
+                    TelaAvaCardiopulmonares.txtTempPanaal.setText(rs.getString(138));
+                }
+                if (rs.getString(139) != null) {
+                    TelaAvaCardiopulmonares.txtDistPanaal.setText(rs.getString(139));
+                }
+                if (rs.getString(140) != null) {
+                    TelaAvaCardiopulmonares.lblPanaal.setText(rs.getString(140));
+                }
+                if (rs.getString(141) != null) {
+                    TelaAvaCardiopulmonares.lblClassificaPanaal.setText(rs.getString(141));
+                }
+                if (rs.getString(142) != null) {
+                    TelaAvaCardiopulmonares.cmbLac.setSelectedItem(rs.getString(142));
+                }
+                if (rs.getString(143) != null) {
+                    TelaAvaCardiopulmonares.txtLacTemp.setText(rs.getString(143));
+                }
+                if (rs.getString(144) != null) {
+                    TelaAvaCardiopulmonares.lblLac.setText(rs.getString(144));
+                }
+                if (rs.getString(145) != null) {
+                    TelaAvaCardiopulmonares.lblLacClass.setText(rs.getString(145));
+                }
+
+                /* TelaAvaCardiopulmonares.cmbProtAero.setSelectedItem(rs.getString(112));
                 condicao = rs.getString(113);
                 TelaAvaCardiopulmonares.txtMin.setText(rs.getString(114));
                 TelaAvaCardiopulmonares.txtSeg.setText(rs.getString(115));
@@ -278,7 +382,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
                 TelaAvaCardiopulmonares.txtLacTemp.setText(rs.getString(143));
                 TelaAvaCardiopulmonares.lblLac.setText(rs.getString(144));
                 TelaAvaCardiopulmonares.lblLacClass.setText(rs.getString(145));
-
+                 */
                 if (condicao.equals("Cardiopata")) {
                     TelaAvaCardiopulmonares.rdbCardiopata.setSelected(true);
                 }
@@ -554,7 +658,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
     public void buscandoultima() {
 
         String sql = "select  max(idava) as max from avaliacao1";
-                    
+
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery(sql);
@@ -613,37 +717,33 @@ public class TelaModuloAva extends javax.swing.JFrame {
         }
 
     }
-    
-    //o metodo abaixo reabre a tela inicial e envia as informações novamente.
-    public void reabretela (){
-    
-                if(PerfilAcesso.equals("Administrador")){
-                              
-                TelaPrincipal principal = new TelaPrincipal();//instanciando a tela
-                //principal.setExtendedState(JFrame.MAXIMIZED_BOTH);//iniciando a tela maximizado
-                principal.setVisible(true);
-                //TelaPrincipal.//ativando os botoes desativados pelo perfil
-                TelaPrincipal.menNovUso.setEnabled(true);
-                TelaPrincipal.menRel.setEnabled(true);
-                TelaPrincipal.MenCadProp.setEnabled(true);
-                TelaPrincipal.lblUsuario.setText(NomeUso);
-                TelaPrincipal.lblPerfil.setText(PerfilAcesso);//aqui passa para o lbl o valor do perfil em banco de dados
-                TelaPrincipal.lblData.setText(DataAcesso);
-               
-                
-                }else{
-                
-                TelaPrincipal principal = new TelaPrincipal();//instanciando a tela
-                principal.setVisible(true);
-                TelaPrincipal.lblUsuario.setText(NomeUso);
-                TelaPrincipal.lblPerfil.setText(PerfilAcesso);//aqui passa para o lbl o valor do perfil em banco de dados
-                TelaPrincipal.lblData.setText(DataAcesso);
 
-                
-                }
-        
-    
-    
+    //o metodo abaixo reabre a tela inicial e envia as informações novamente.
+    public void reabretela() {
+
+        if (PerfilAcesso.equals("Administrador")) {
+
+            TelaPrincipal principal = new TelaPrincipal();//instanciando a tela
+            //principal.setExtendedState(JFrame.MAXIMIZED_BOTH);//iniciando a tela maximizado
+            principal.setVisible(true);
+            //TelaPrincipal.//ativando os botoes desativados pelo perfil
+            TelaPrincipal.menNovUso.setEnabled(true);
+            TelaPrincipal.menRel.setEnabled(true);
+            TelaPrincipal.MenCadProp.setEnabled(true);
+            TelaPrincipal.lblUsuario.setText(NomeUso);
+            TelaPrincipal.lblPerfil.setText(PerfilAcesso);//aqui passa para o lbl o valor do perfil em banco de dados
+            TelaPrincipal.lblData.setText(DataAcesso);
+
+        } else {
+
+            TelaPrincipal principal = new TelaPrincipal();//instanciando a tela
+            principal.setVisible(true);
+            TelaPrincipal.lblUsuario.setText(NomeUso);
+            TelaPrincipal.lblPerfil.setText(PerfilAcesso);//aqui passa para o lbl o valor do perfil em banco de dados
+            TelaPrincipal.lblData.setText(DataAcesso);
+
+        }
+
     }
 
     public TelaModuloAva() {
@@ -973,11 +1073,11 @@ public class TelaModuloAva extends javax.swing.JFrame {
         int adicionar = JOptionPane.showConfirmDialog(null, "Esta tela esta sendo fechada, deseja continuar?", "Atenção", JOptionPane.YES_NO_OPTION);
 
         if (adicionar == JOptionPane.YES_OPTION) {
-            
-           //TelaModuloAva.this.dispose();
-           reabretela();
-           TelaModuloAva comp = (TelaModuloAva) SwingUtilities.getRoot(this);
-           ((Window) comp).dispose();
+
+            //TelaModuloAva.this.dispose();
+            reabretela();
+            TelaModuloAva comp = (TelaModuloAva) SwingUtilities.getRoot(this);
+            ((Window) comp).dispose();
 
         } else {
 
@@ -1051,12 +1151,12 @@ public class TelaModuloAva extends javax.swing.JFrame {
     private void btnAvaPosturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaPosturalActionPerformed
         gerenciadorDeJanela.abrirJanelas(TelaAnalisePostural.getInstancia());
         setarcamposPostural();
-        
+
         /*        TelaAnalisePostural analise = new TelaAnalisePostural();
         analise.setVisible(true);
         setarcamposPostural();
         DesktopAva.add(analise);
-        */
+         */
     }//GEN-LAST:event_btnAvaPosturalActionPerformed
 
     private void btnAvaImpriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaImpriActionPerformed
@@ -1067,14 +1167,12 @@ public class TelaModuloAva extends javax.swing.JFrame {
         int adicionar = JOptionPane.showConfirmDialog(null, "Esta tela esta sendo fechada, deseja continuar?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (adicionar == JOptionPane.YES_OPTION) {
 
-           reabretela();//chama a tela principal
-           
-           //abaixo fecha a tela modulo ava
-           TelaModuloAva comp = (TelaModuloAva) SwingUtilities.getRoot(this);
-           ((Window) comp).dispose();
-            
-            
-            
+            reabretela();//chama a tela principal
+
+            //abaixo fecha a tela modulo ava
+            TelaModuloAva comp = (TelaModuloAva) SwingUtilities.getRoot(this);
+            ((Window) comp).dispose();
+
             //TelaModuloAva.this.dispose(); metodo antigo de fechar a janela
         } else {
 

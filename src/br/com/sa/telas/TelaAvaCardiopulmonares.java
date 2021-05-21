@@ -15,6 +15,7 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
     Connection conexao = null;//usando o metodo de conexao e atribuindo a conexao limpa para iniciar
     PreparedStatement pst = null; //usado para preparar a conexao com o banco de dados
     ResultSet rs = null;//exibe o resultado das instruçoes sql que sera usado no java
+    public static String painel = null;
 
     //variaveis de informaçoes importantes do cliente
     public String sexo;
@@ -908,6 +909,16 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         buttonGroup10 = new javax.swing.ButtonGroup();
         buttonGroup11 = new javax.swing.ButtonGroup();
         buttonGroup12 = new javax.swing.ButtonGroup();
+        painelOrientacao = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtObjetivo = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtMaterial = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtExecucao = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtOrientacoes = new javax.swing.JTextArea();
+        btnSairAlatica4 = new javax.swing.JButton();
         painelAerobico = new javax.swing.JPanel();
         cmbProtAero = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
@@ -942,15 +953,6 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         rdbSedentario = new javax.swing.JRadioButton();
         btnSairAlatica1 = new javax.swing.JButton();
         btnAjuda1 = new javax.swing.JButton();
-        painelOrientacao = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtObjetivo = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtMaterial = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtExecucao = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtOrientacoes = new javax.swing.JTextArea();
         painelLatico = new javax.swing.JPanel();
         cmbLatica = new javax.swing.JComboBox<>();
         txtT1 = new javax.swing.JFormattedTextField();
@@ -1022,9 +1024,11 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         jLabel30 = new javax.swing.JLabel();
         lblIfPanal1 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        btnMedSalvar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(143, 170, 207));
-        setIconifiable(true);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Parâmetros Cardiopulmonares");
         setMaximumSize(new java.awt.Dimension(762, 530));
         setPreferredSize(new java.awt.Dimension(2000, 676));
@@ -1035,6 +1039,7 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosing(evt);
             }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -1047,6 +1052,109 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().setLayout(null);
+
+        painelOrientacao.setBackground(new java.awt.Color(255, 247, 241));
+        painelOrientacao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações para execução dos protocolos"));
+
+        txtObjetivo.setEditable(false);
+        txtObjetivo.setBackground(new java.awt.Color(255, 247, 241));
+        txtObjetivo.setColumns(20);
+        txtObjetivo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtObjetivo.setLineWrap(true);
+        txtObjetivo.setRows(3);
+        txtObjetivo.setWrapStyleWord(true);
+        txtObjetivo.setAutoscrolls(false);
+        txtObjetivo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Objetivo"));
+        txtObjetivo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtObjetivo.setKeymap(null);
+        txtObjetivo.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        txtObjetivo.setOpaque(false);
+        jScrollPane2.setViewportView(txtObjetivo);
+
+        txtMaterial.setEditable(false);
+        txtMaterial.setBackground(new java.awt.Color(255, 247, 241));
+        txtMaterial.setColumns(20);
+        txtMaterial.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtMaterial.setLineWrap(true);
+        txtMaterial.setRows(3);
+        txtMaterial.setWrapStyleWord(true);
+        txtMaterial.setAutoscrolls(false);
+        txtMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Material Necessário"));
+        txtMaterial.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtMaterial.setKeymap(null);
+        txtMaterial.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        txtMaterial.setOpaque(false);
+        jScrollPane1.setViewportView(txtMaterial);
+
+        txtExecucao.setEditable(false);
+        txtExecucao.setBackground(new java.awt.Color(255, 247, 241));
+        txtExecucao.setColumns(20);
+        txtExecucao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtExecucao.setLineWrap(true);
+        txtExecucao.setRows(4);
+        txtExecucao.setWrapStyleWord(true);
+        txtExecucao.setAutoscrolls(false);
+        txtExecucao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Metodologia de Execução"));
+        txtExecucao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtExecucao.setKeymap(null);
+        txtExecucao.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        txtExecucao.setOpaque(false);
+        jScrollPane3.setViewportView(txtExecucao);
+
+        txtOrientacoes.setEditable(false);
+        txtOrientacoes.setBackground(new java.awt.Color(255, 247, 241));
+        txtOrientacoes.setColumns(20);
+        txtOrientacoes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtOrientacoes.setLineWrap(true);
+        txtOrientacoes.setRows(3);
+        txtOrientacoes.setToolTipText("");
+        txtOrientacoes.setWrapStyleWord(true);
+        txtOrientacoes.setAutoscrolls(false);
+        txtOrientacoes.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações ao Avaliando"));
+        txtOrientacoes.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtOrientacoes.setKeymap(null);
+        txtOrientacoes.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        txtOrientacoes.setOpaque(false);
+        jScrollPane4.setViewportView(txtOrientacoes);
+
+        btnSairAlatica4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSairAlatica4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/delete30x30.png"))); // NOI18N
+        btnSairAlatica4.setText("Sair");
+        btnSairAlatica4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairAlatica4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelOrientacaoLayout = new javax.swing.GroupLayout(painelOrientacao);
+        painelOrientacao.setLayout(painelOrientacaoLayout);
+        painelOrientacaoLayout.setHorizontalGroup(
+            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(jScrollPane3)
+            .addComponent(jScrollPane4)
+            .addGroup(painelOrientacaoLayout.createSequentialGroup()
+                .addComponent(jScrollPane2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSairAlatica4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1))
+        );
+        painelOrientacaoLayout.setVerticalGroup(
+            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelOrientacaoLayout.createSequentialGroup()
+                .addGroup(painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSairAlatica4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(painelOrientacao);
+        painelOrientacao.setBounds(480, 10, 560, 620);
 
         painelAerobico.setBackground(new java.awt.Color(255, 247, 241));
         painelAerobico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(105, 4, 13)), "Capacidade Aeróbica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(105, 4, 13))); // NOI18N
@@ -1456,97 +1564,6 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         getContentPane().add(painelAerobico);
         painelAerobico.setBounds(480, 10, 560, 330);
 
-        painelOrientacao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações para execução dos protocolos"));
-
-        txtObjetivo.setEditable(false);
-        txtObjetivo.setBackground(new java.awt.Color(214, 217, 223));
-        txtObjetivo.setColumns(20);
-        txtObjetivo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtObjetivo.setLineWrap(true);
-        txtObjetivo.setRows(3);
-        txtObjetivo.setWrapStyleWord(true);
-        txtObjetivo.setAutoscrolls(false);
-        txtObjetivo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Objetivo"));
-        txtObjetivo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtObjetivo.setEnabled(false);
-        txtObjetivo.setKeymap(null);
-        txtObjetivo.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        txtObjetivo.setOpaque(false);
-        jScrollPane2.setViewportView(txtObjetivo);
-
-        txtMaterial.setEditable(false);
-        txtMaterial.setBackground(new java.awt.Color(214, 217, 223));
-        txtMaterial.setColumns(20);
-        txtMaterial.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtMaterial.setLineWrap(true);
-        txtMaterial.setRows(3);
-        txtMaterial.setWrapStyleWord(true);
-        txtMaterial.setAutoscrolls(false);
-        txtMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Material Necessário"));
-        txtMaterial.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtMaterial.setEnabled(false);
-        txtMaterial.setKeymap(null);
-        txtMaterial.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        txtMaterial.setOpaque(false);
-        jScrollPane1.setViewportView(txtMaterial);
-
-        txtExecucao.setEditable(false);
-        txtExecucao.setBackground(new java.awt.Color(214, 217, 223));
-        txtExecucao.setColumns(20);
-        txtExecucao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtExecucao.setLineWrap(true);
-        txtExecucao.setRows(4);
-        txtExecucao.setWrapStyleWord(true);
-        txtExecucao.setAutoscrolls(false);
-        txtExecucao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Metodologia de Execução"));
-        txtExecucao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtExecucao.setEnabled(false);
-        txtExecucao.setKeymap(null);
-        txtExecucao.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        txtExecucao.setOpaque(false);
-        jScrollPane3.setViewportView(txtExecucao);
-
-        txtOrientacoes.setEditable(false);
-        txtOrientacoes.setBackground(new java.awt.Color(214, 217, 223));
-        txtOrientacoes.setColumns(20);
-        txtOrientacoes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtOrientacoes.setLineWrap(true);
-        txtOrientacoes.setRows(3);
-        txtOrientacoes.setToolTipText("");
-        txtOrientacoes.setWrapStyleWord(true);
-        txtOrientacoes.setAutoscrolls(false);
-        txtOrientacoes.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações ao Avaliando"));
-        txtOrientacoes.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtOrientacoes.setEnabled(false);
-        txtOrientacoes.setKeymap(null);
-        txtOrientacoes.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        txtOrientacoes.setOpaque(false);
-        jScrollPane4.setViewportView(txtOrientacoes);
-
-        javax.swing.GroupLayout painelOrientacaoLayout = new javax.swing.GroupLayout(painelOrientacao);
-        painelOrientacao.setLayout(painelOrientacaoLayout);
-        painelOrientacaoLayout.setHorizontalGroup(
-            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
-            .addComponent(jScrollPane2)
-            .addComponent(jScrollPane1)
-            .addComponent(jScrollPane3)
-        );
-        painelOrientacaoLayout.setVerticalGroup(
-            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelOrientacaoLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        getContentPane().add(painelOrientacao);
-        painelOrientacao.setBounds(1100, 10, 539, 620);
-
         painelLatico.setBackground(new java.awt.Color(255, 247, 241));
         painelLatico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(105, 4, 13)), "Capacidade Anaeróbica Lática (PANAL)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(105, 4, 13))); // NOI18N
 
@@ -1853,6 +1870,7 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
 
         painelAlatico.setBackground(new java.awt.Color(255, 247, 241));
         painelAlatico.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(105, 4, 13)), "Capacidade Anaeróbica Alática (PANAAL)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(105, 4, 13))); // NOI18N
+        painelAlatico.setPreferredSize(new java.awt.Dimension(562, 176));
 
         cmbPanaal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cmbPanaal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Margária - Teste da Escada", "Protocolo de Fletcher - Teste de Multi-Saltos", "Protocolo de Almeida & Sampedro - Teste de 30 m", "Protocolo de Kiss - Teste de 45,7 m" }));
@@ -1938,15 +1956,15 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
                                 .addComponent(txtDistPanaal, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel40)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 179, Short.MAX_VALUE))
                             .addGroup(painelAlaticoLayout.createSequentialGroup()
                                 .addComponent(btnSairAlatica)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnCalcularPanaal))))
                     .addGroup(painelAlaticoLayout.createSequentialGroup()
-                        .addComponent(cmbPanaal, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbPanaal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pbnAjuda0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(pbnAjuda0)))
                 .addContainerGap())
         );
         painelAlaticoLayout.setVerticalGroup(
@@ -2036,12 +2054,11 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
                 .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelLactatoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelLactatoLayout.createSequentialGroup()
-                                .addComponent(jLabel41)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtLacTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnSairAlatica3))
+                        .addComponent(btnSairAlatica3)
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtLacTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnLacCalc))
                     .addGroup(painelLactatoLayout.createSequentialGroup()
@@ -2056,18 +2073,14 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
                 .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbLac, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAjuda3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLactatoLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLacTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16)
-                        .addComponent(btnSairAlatica3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(painelLactatoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLacCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(277, 277, 277))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLacCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtLacTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSairAlatica3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         getContentPane().add(painelLactato);
@@ -2262,7 +2275,17 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel24);
         jLabel24.setBounds(0, 70, 490, 490);
 
-        setBounds(0, 0, 2234, 671);
+        btnMedSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/salvar30x30.png"))); // NOI18N
+        btnMedSalvar.setText("Salvar e Avançar");
+        btnMedSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMedSalvarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMedSalvar);
+        btnMedSalvar.setBounds(830, 580, 225, 39);
+
+        setBounds(0, 0, 1068, 664);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbProtAeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProtAeroActionPerformed
@@ -3018,18 +3041,30 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
 
     private void pbnAjuda0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pbnAjuda0ActionPerformed
         painelOrientacao.setVisible(true);
+        painel = "painelAlatico";
+        painelAlatico.setVisible(false);
+        
     }//GEN-LAST:event_pbnAjuda0ActionPerformed
 
     private void btnAjuda3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda3ActionPerformed
-      painelOrientacao.setVisible(true);
+        painelOrientacao.setVisible(true);
+        painel = "painelLactato";
+        painelLactato.setVisible(false);
+        
     }//GEN-LAST:event_btnAjuda3ActionPerformed
 
     private void btnAjuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda2ActionPerformed
-       painelOrientacao.setVisible(true);
+        painelOrientacao.setVisible(true);
+        painel = "painelLatico";
+        painelLatico.setVisible(false);
+        
     }//GEN-LAST:event_btnAjuda2ActionPerformed
 
     private void btnAjuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda1ActionPerformed
-     painelOrientacao.setVisible(true);
+        painelOrientacao.setVisible(true);
+        painel = "painelAerobico";
+        painelAerobico.setVisible(false);
+        
     }//GEN-LAST:event_btnAjuda1ActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
@@ -3044,6 +3079,48 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         desativapainel();        // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameOpened
 
+    private void btnSairAlatica4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairAlatica4ActionPerformed
+        if (painel.equals("painelAerobico")) {
+            painelAerobico.setVisible(true);
+            painelOrientacao.setVisible(false);
+        }
+        if (painel.equals("painelLatico")) {
+            painelLatico.setVisible(true);
+            painelOrientacao.setVisible(false);
+        }
+        if (painel.equals("painelLactato")) {
+            painelLactato.setVisible(true);
+            painelOrientacao.setVisible(false);
+        }
+        if (painel.equals("painelAlatico")) {
+            painelAlatico.setVisible(true);
+            painelOrientacao.setVisible(false);
+        }
+    }//GEN-LAST:event_btnSairAlatica4ActionPerformed
+
+    private void btnMedSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedSalvarActionPerformed
+        int adicionar = JOptionPane.showConfirmDialog(null, "Concluiu os Testes?", "Atenção", JOptionPane.YES_NO_OPTION);
+
+        if (adicionar == JOptionPane.YES_OPTION) {
+            incluirmedidas();
+            telaAvaCardiopulmonares = null;
+            TelaAvaCardiopulmonares.this.dispose();//metodo para fechar uma unica janela
+        } else {
+
+        }
+    }//GEN-LAST:event_btnMedSalvarActionPerformed
+
+    private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
+          int adicionar = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
+
+        if (adicionar == JOptionPane.YES_OPTION) {
+            telaAvaCardiopulmonares = null;
+            TelaAvaCardiopulmonares.this.dispose(); //metodo para fechar uma unica janela
+        } else {
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_formInternalFrameClosing
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjuda1;
@@ -3053,10 +3130,12 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCalcularLat;
     private javax.swing.JButton btnCalcularPanaal;
     private javax.swing.JButton btnLacCalc;
+    private javax.swing.JButton btnMedSalvar;
     private javax.swing.JButton btnSairAlatica;
     private javax.swing.JButton btnSairAlatica1;
     private javax.swing.JButton btnSairAlatica2;
     private javax.swing.JButton btnSairAlatica3;
+    private javax.swing.JButton btnSairAlatica4;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup11;
