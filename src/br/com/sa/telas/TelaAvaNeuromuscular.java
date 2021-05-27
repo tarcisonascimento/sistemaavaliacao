@@ -466,20 +466,14 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         cmbIsoAbs = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         txtIsoAbs = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        lblIsoAbs = new javax.swing.JLabel();
         btnCalc1 = new javax.swing.JButton();
         cmbIsoBraco = new javax.swing.JComboBox<>();
         txtIsoBraco = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        lblIsoBraco = new javax.swing.JLabel();
         btnCalc2 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         cmbIsoPeito = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         txtIsoPeito = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        lblIsoPeito = new javax.swing.JLabel();
         btnCalc3 = new javax.swing.JButton();
         cmbIsoPerna = new javax.swing.JComboBox<>();
         txtIsoPerna = new javax.swing.JTextField();
@@ -534,8 +528,31 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jLabel45 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         btnMedSalvar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblIsoAbs = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel11 = new javax.swing.JLabel();
+        lblIsoBraco = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        lblIsoPeito = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setTitle("Parametros Neuromusculares");
+        getContentPane().setLayout(null);
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações para execução dos protocolos"));
 
@@ -608,7 +625,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
             .addComponent(jScrollPane1)
             .addComponent(jScrollPane4)
             .addComponent(jScrollPane5)
@@ -625,6 +642,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        getContentPane().add(jPanel11);
+        jPanel11.setBounds(2073, 11, 331, 585);
+
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Testes de Força Isotônica"));
 
@@ -639,11 +659,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         txtIsoAbs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIsoAbs.setEnabled(false);
-
-        jLabel2.setText("Classificação:");
-
-        lblIsoAbs.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblIsoAbs.setText("Não calculado");
 
         btnCalc1.setText("Calcular");
         btnCalc1.setEnabled(false);
@@ -665,9 +680,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Resultado:");
 
-        lblIsoBraco.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblIsoBraco.setText("Não calculado");
-
         btnCalc2.setText("Calcular");
         btnCalc2.setEnabled(false);
         btnCalc2.addActionListener(new java.awt.event.ActionListener() {
@@ -675,8 +687,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 btnCalc2ActionPerformed(evt);
             }
         });
-
-        jLabel11.setText("Classificação:");
 
         cmbIsoPeito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da Eurofit - Flexão de Braços" }));
         cmbIsoPeito.setPreferredSize(new java.awt.Dimension(398, 20));
@@ -690,11 +700,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         txtIsoPeito.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIsoPeito.setEnabled(false);
-
-        jLabel8.setText("Classificação:");
-
-        lblIsoPeito.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblIsoPeito.setText("Não calculado");
 
         btnCalc3.setText("Calcular");
         btnCalc3.setEnabled(false);
@@ -766,27 +771,19 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                                             .addComponent(txtIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabel14)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblIsoBraco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIsoPeito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIsoPerna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIsoAbs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnCalc3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnCalc1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnCalc2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnCalc4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(cmbIsoPeito, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbIsoPeito, 0, 405, Short.MAX_VALUE)
                             .addComponent(cmbIsoBraco, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbIsoAbs, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -810,8 +807,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(lblIsoAbs)
                     .addComponent(btnCalc1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -821,9 +816,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(lblIsoBraco)
-                    .addComponent(btnCalc2)
-                    .addComponent(jLabel11))
+                    .addComponent(btnCalc2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -832,8 +825,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(lblIsoPeito)
                     .addComponent(btnCalc3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -848,6 +839,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                     .addComponent(btnCalc4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(692, 26, 539, 262);
 
         jPanel6.setBackground(new java.awt.Color(204, 255, 204));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Testes de Força Explosiva"));
@@ -1047,6 +1041,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                     .addComponent(jLabel30)))
         );
 
+        getContentPane().add(jPanel6);
+        jPanel6.setBounds(692, 312, 539, 181);
+
         jPanel7.setBackground(new java.awt.Color(255, 204, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Teste de Força Isométrica"));
 
@@ -1126,7 +1123,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmbMetDors, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(17, Short.MAX_VALUE)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel39)
@@ -1187,6 +1184,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel7);
+        jPanel7.setBounds(0, 456, 539, 130);
+
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/sair30x30.png"))); // NOI18N
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -1194,6 +1194,8 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(2720, 602, 109, 39);
 
         btnMedSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/salvar30x30.png"))); // NOI18N
         btnMedSalvar.setText("Salvar e Avançar");
@@ -1202,43 +1204,124 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 btnMedSalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnMedSalvar);
+        btnMedSalvar.setBounds(2835, 602, 149, 39);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 787, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMedSalvar))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(btnMedSalvar))
-                .addContainerGap())
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem80x80.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(30, 20, 80, 51);
 
-        setBounds(0, 0, 1067, 670);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Classificação:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(150, 40, 90, 17);
+
+        lblIsoAbs.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIsoAbs.setForeground(new java.awt.Color(255, 153, 0));
+        lblIsoAbs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIsoAbs.setText("Não calculado");
+        getContentPane().add(lblIsoAbs);
+        lblIsoAbs.setBounds(240, 40, 131, 17);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Abdominal");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(150, 10, 200, 22);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(20, 0, 100, 100);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem20x20.png"))); // NOI18N
+        jButton1.setText("Testar");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(150, 70, 200, 29);
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/barrafixa50x72.png"))); // NOI18N
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(26, 123, 50, 80);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Barra Fixa");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(140, 120, 200, 22);
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(0, 110, 100, 100);
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/barrafixa15x22.png"))); // NOI18N
+        jButton3.setText("Testar");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(150, 180, 200, 29);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(24, 220, 370, 10);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setText("Classificação:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(140, 150, 90, 17);
+
+        lblIsoBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIsoBraco.setForeground(new java.awt.Color(255, 153, 0));
+        lblIsoBraco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIsoBraco.setText("Não calculado");
+        getContentPane().add(lblIsoBraco);
+        lblIsoBraco.setBounds(230, 150, 120, 15);
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(40, 110, 370, 2);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/flexao78x40.png"))); // NOI18N
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(0, 230, 90, 80);
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Flexão de Braços");
+        getContentPane().add(jLabel37);
+        jLabel37.setBounds(100, 230, 260, 22);
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
+        getContentPane().add(jLabel40);
+        jLabel40.setBounds(-10, 220, 100, 100);
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/flexao25x13.png"))); // NOI18N
+        jButton4.setText("Testar");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(140, 290, 200, 29);
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(10, 330, 370, 2);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Classificação:");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(140, 260, 100, 17);
+
+        lblIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIsoPeito.setForeground(new java.awt.Color(255, 153, 0));
+        lblIsoPeito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIsoPeito.setText("Não calculado");
+        getContentPane().add(lblIsoPeito);
+        lblIsoPeito.setBounds(230, 260, 120, 17);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/fundo467x654.png"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(-40, 0, 480, 640);
+
+        setBounds(0, 0, 3000, 670);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1582,23 +1665,33 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JComboBox<String> cmbIsoPerna;
     public static javax.swing.JComboBox<String> cmbMetDors;
     public static javax.swing.JComboBox<String> cmbMetSup;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1606,14 +1699,17 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel6;
@@ -1622,6 +1718,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     public static javax.swing.JLabel lblExpBraco;
     public static javax.swing.JLabel lblExpHoriz;
     public static javax.swing.JLabel lblExpVert;
