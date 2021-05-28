@@ -1199,148 +1199,148 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem60x60.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 30, 60, 51);
+        jLabel3.setBounds(70, 20, 60, 51);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Classificação:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(180, 40, 90, 17);
+        jLabel2.setBounds(180, 30, 90, 17);
 
         lblIsoAbs.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIsoAbs.setForeground(new java.awt.Color(255, 153, 0));
         lblIsoAbs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoAbs.setText("Não calculado");
         getContentPane().add(lblIsoAbs);
-        lblIsoAbs.setBounds(270, 40, 131, 17);
+        lblIsoAbs.setBounds(270, 30, 131, 17);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 102));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Abdominal");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(180, 10, 200, 22);
+        jLabel9.setBounds(180, 0, 200, 22);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(50, 10, 100, 100);
+        jLabel15.setBounds(50, 0, 100, 100);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem20x20.png"))); // NOI18N
         jButton1.setText("Testar");
         getContentPane().add(jButton1);
-        jButton1.setBounds(180, 70, 200, 29);
+        jButton1.setBounds(180, 50, 200, 29);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/barrafixa50x72.png"))); // NOI18N
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(65, 120, 50, 80);
+        jLabel18.setBounds(66, 110, 50, 80);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 102));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Barra Fixa");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(150, 120, 200, 22);
+        jLabel21.setBounds(160, 100, 200, 22);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
         getContentPane().add(jLabel24);
-        jLabel24.setBounds(40, 110, 100, 100);
+        jLabel24.setBounds(40, 100, 100, 100);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/barrafixa15x22.png"))); // NOI18N
         jButton3.setText("Testar");
         getContentPane().add(jButton3);
-        jButton3.setBounds(160, 180, 200, 29);
+        jButton3.setBounds(160, 150, 200, 29);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(24, 220, 370, 2);
+        jSeparator1.setBounds(30, 200, 370, 2);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Classificação:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(150, 150, 90, 17);
+        jLabel11.setBounds(160, 130, 90, 17);
 
         lblIsoBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIsoBraco.setForeground(new java.awt.Color(255, 153, 0));
         lblIsoBraco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoBraco.setText("Não calculado");
         getContentPane().add(lblIsoBraco);
-        lblIsoBraco.setBounds(240, 150, 120, 15);
+        lblIsoBraco.setBounds(250, 130, 120, 15);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(40, 110, 370, 2);
+        jSeparator2.setBounds(40, 100, 370, 2);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/flexao78x40.png"))); // NOI18N
         getContentPane().add(jLabel27);
-        jLabel27.setBounds(30, 230, 90, 80);
+        jLabel27.setBounds(30, 210, 90, 80);
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(255, 255, 102));
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setText("Flexão de Braços");
         getContentPane().add(jLabel37);
-        jLabel37.setBounds(100, 230, 260, 22);
+        jLabel37.setBounds(110, 200, 260, 22);
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
         getContentPane().add(jLabel40);
-        jLabel40.setBounds(20, 220, 100, 100);
+        jLabel40.setBounds(20, 200, 100, 100);
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/flexao25x13.png"))); // NOI18N
         jButton4.setText("Testar");
         getContentPane().add(jButton4);
-        jButton4.setBounds(140, 290, 200, 29);
+        jButton4.setBounds(150, 250, 200, 29);
         getContentPane().add(jSeparator3);
-        jSeparator3.setBounds(10, 330, 370, 2);
+        jSeparator3.setBounds(10, 300, 370, 2);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Classificação:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(140, 260, 100, 17);
+        jLabel8.setBounds(150, 230, 100, 17);
 
         lblIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIsoPeito.setForeground(new java.awt.Color(255, 153, 0));
         lblIsoPeito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoPeito.setText("Não calculado");
         getContentPane().add(lblIsoPeito);
-        lblIsoPeito.setBounds(230, 260, 120, 17);
+        lblIsoPeito.setBounds(240, 230, 120, 17);
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/agachamento60x75.png"))); // NOI18N
         getContentPane().add(jLabel41);
-        jLabel41.setBounds(30, 340, 60, 80);
+        jLabel41.setBounds(40, 310, 60, 80);
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 102));
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("Agachamento");
         getContentPane().add(jLabel42);
-        jLabel42.setBounds(80, 340, 260, 22);
+        jLabel42.setBounds(130, 300, 200, 22);
 
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/circulo100x100.png"))); // NOI18N
         getContentPane().add(jLabel43);
-        jLabel43.setBounds(0, 330, 100, 100);
+        jLabel43.setBounds(10, 300, 100, 100);
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/agachamento20x25.png"))); // NOI18N
         jButton5.setText("Testar");
         getContentPane().add(jButton5);
-        jButton5.setBounds(120, 400, 200, 29);
+        jButton5.setBounds(130, 350, 200, 29);
         getContentPane().add(jSeparator4);
-        jSeparator4.setBounds(-10, 440, 370, 2);
+        jSeparator4.setBounds(0, 400, 370, 2);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Classificação:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(130, 370, 120, 17);
+        jLabel14.setBounds(140, 330, 120, 17);
 
         lblIsoPerna.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIsoPerna.setForeground(new java.awt.Color(255, 153, 0));
         lblIsoPerna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoPerna.setText("Não calculado");
         getContentPane().add(lblIsoPerna);
-        lblIsoPerna.setBounds(210, 370, 131, 17);
+        lblIsoPerna.setBounds(220, 330, 131, 17);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/fundo467x654.png"))); // NOI18N
         jLabel12.setText("jLabel12");
