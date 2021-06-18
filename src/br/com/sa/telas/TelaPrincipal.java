@@ -79,6 +79,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         Desktop = new javax.swing.JDesktopPane();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
         lblPerfil = new javax.swing.JLabel();
@@ -87,7 +88,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnNovaAvalia = new javax.swing.JButton();
         btnNovoCli = new javax.swing.JButton();
         bntArquivo = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnNovoCli1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -133,16 +133,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Desktop.setBackground(new java.awt.Color(255, 247, 241));
 
-        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
-        Desktop.setLayout(DesktopLayout);
-        DesktopLayout.setHorizontalGroup(
-            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 841, Short.MAX_VALUE)
-        );
-        DesktopLayout.setVerticalGroup(
-            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/Fundotelaprincipal.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        Desktop.add(jLabel3);
+        jLabel3.setBounds(0, 0, 840, 580);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações"));
 
@@ -210,8 +204,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/Logo-79x30.png"))); // NOI18N
-
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/sair30x30.png"))); // NOI18N
         btnSair.setText("Sair");
         btnSair.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -242,7 +234,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(bntArquivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnNovoCli1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,12 +243,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnNovoCli)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNovoCli1)
-                .addGap(55, 55, 55)
+                .addGap(34, 34, 34)
                 .addComponent(bntArquivo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addComponent(btnSair)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1))
+                .addGap(36, 36, 36))
         );
 
         menArq.setText("Arquivo");
@@ -399,7 +389,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Desktop)
+                .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -584,7 +574,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnNovoCli;
     private javax.swing.JButton btnNovoCli1;
     private javax.swing.JButton btnSair;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

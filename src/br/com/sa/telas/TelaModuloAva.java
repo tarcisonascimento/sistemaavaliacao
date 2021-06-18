@@ -768,6 +768,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
         btnAvaNeuro = new javax.swing.JButton();
         btnAvaPostural = new javax.swing.JButton();
         DesktopAva = new javax.swing.JDesktopPane();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -922,7 +923,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
                 .addComponent(btnAvaPostural, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAvaImpri)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(btnAvaSair)
                 .addContainerGap())
         );
@@ -934,16 +935,9 @@ public class TelaModuloAva extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout DesktopAvaLayout = new javax.swing.GroupLayout(DesktopAva);
-        DesktopAva.setLayout(DesktopAvaLayout);
-        DesktopAvaLayout.setHorizontalGroup(
-            DesktopAvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1073, Short.MAX_VALUE)
-        );
-        DesktopAvaLayout.setVerticalGroup(
-            DesktopAvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/Fundotelaprincipal.png"))); // NOI18N
+        DesktopAva.add(jLabel5);
+        jLabel5.setBounds(90, 0, 940, 670);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações"));
 
@@ -1046,8 +1040,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DesktopAva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(DesktopAva, javax.swing.GroupLayout.DEFAULT_SIZE, 1067, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1231,6 +1224,7 @@ public class TelaModuloAva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

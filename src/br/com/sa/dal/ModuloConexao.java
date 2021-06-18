@@ -29,7 +29,8 @@ public class ModuloConexao {
             return conexao;
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro: " + e);
+            // a linha abaixo se tirar o comentario mostra um erro caso a conexao com banco de dados falhe
+            //JOptionPane.showMessageDialog(null, "Erro: " + e);
             //a linha abaixo serve de apoio para esclarecer o erro de conexao
             System.out.println(e);
             return null;
