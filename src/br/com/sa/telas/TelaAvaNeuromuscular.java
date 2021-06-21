@@ -16,20 +16,18 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     //variaveis de informaçoes importantes do cliente
     public String sexo;
     public double peso, estatura, idade;
-    
-    
-     //o metodo abaixo é utilizado para abrir apenas uma janela no Jdesktop
+
+    //o metodo abaixo é utilizado para abrir apenas uma janela no Jdesktop
     public static TelaAvaNeuromuscular telaAvaNeuromuscular;
-    
-    public static TelaAvaNeuromuscular getInstancia(){
-        if (telaAvaNeuromuscular == null){
-            
+
+    public static TelaAvaNeuromuscular getInstancia() {
+        if (telaAvaNeuromuscular == null) {
+
             telaAvaNeuromuscular = new TelaAvaNeuromuscular();
 
         }
         return telaAvaNeuromuscular;
     }
-    
 
     public void buscadados() {
 
@@ -53,15 +51,15 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         }
 
     }
-    
-    public void incluirneuro () {
-    
+
+    public void incluirneuro() {
+
         String sql = "update avaliacao1 set neuro01=?,neuro02=?,neuro03=?,neuro04=?,neuro05=?,neuro06=?,neuro07=?,neuro08=?,neuro09=?,neuro10=?,neuro11=?,neuro12=?,neuro13=?,neuro14=?,neuro15=?,neuro16=?,neuro17=?,neuro18=?,neuro19=?,neuro20=?,neuro21=?,neuro22=?,neuro23=?,neuro24=?,neuro25=?,neuro26=?,neuro27=? where idava=?";
-        
+
         try {
-            
+
             pst = conexao.prepareStatement(sql);
-            
+
             pst.setString(1, cmbIsoAbs.getSelectedItem().toString());
             pst.setString(2, txtIsoAbs.getText());
             pst.setString(3, lblIsoAbs.getText());
@@ -98,16 +96,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro Ao incluir dados no banco\n" + e);
-            
+
         }
-    
-    
-    
-    
-    
-    
+
     }
-    
 
     public void desativacamposiso01() {
 
@@ -464,94 +456,113 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtExecucao = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         cmbIsoAbs = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        btnCalc1 = new javax.swing.JButton();
         cmbIsoBraco = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        btnCalc2 = new javax.swing.JButton();
         cmbIsoPeito = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        txtIsoPeito = new javax.swing.JTextField();
-        btnCalc3 = new javax.swing.JButton();
         cmbIsoPerna = new javax.swing.JComboBox<>();
-        txtIsoPerna = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        btnCalc4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         cmbExpBraco = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        txtExpBraco = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        lblExpBraco = new javax.swing.JLabel();
-        btnCalc5 = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
         cmbExpVert = new javax.swing.JComboBox<>();
-        txtExpVert = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        lblExpVert = new javax.swing.JLabel();
-        btnCalc6 = new javax.swing.JButton();
         cmbExpHoriz = new javax.swing.JComboBox<>();
-        jLabel22 = new javax.swing.JLabel();
-        txtExpHoriz = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        lblExpHoriz = new javax.swing.JLabel();
-        btnCalc7 = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         cmbMetSup = new javax.swing.JComboBox<>();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        lblMetSup = new javax.swing.JLabel();
-        btnCalc8 = new javax.swing.JButton();
-        txtMetSup = new javax.swing.JFormattedTextField();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         cmbMetDors = new javax.swing.JComboBox<>();
-        btnCalc9 = new javax.swing.JButton();
-        lblMetDors = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        txtMetDors = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         btnMedSalvar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel37 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        lblIsoPeito = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        lblIsoPerna = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        painelIsotonico = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         lblIsoAbs = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         txtIsoAbs = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel21 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         lblIsoBraco = new javax.swing.JLabel();
         txtIsoBraco = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        lblIsoPeito = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        txtIsoPeito = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        lblIsoPerna = new javax.swing.JLabel();
+        txtIsoPerna = new javax.swing.JTextField();
+        btnCalc1 = new javax.swing.JButton();
+        btnCalc2 = new javax.swing.JButton();
+        btnCalc3 = new javax.swing.JButton();
+        btnCalc4 = new javax.swing.JButton();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel71 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        painelIsometrico = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel73 = new javax.swing.JLabel();
+        txtMetSup = new javax.swing.JFormattedTextField();
+        txtMetDors = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        lblMetSup = new javax.swing.JLabel();
+        lblMetDors = new javax.swing.JLabel();
+        btnCalc8 = new javax.swing.JButton();
+        btnCalc9 = new javax.swing.JButton();
+        painelExplosivo = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel63 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel72 = new javax.swing.JLabel();
+        txtExpBraco = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        txtExpVert = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        txtExpHoriz = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        lblExpBraco = new javax.swing.JLabel();
+        lblExpVert = new javax.swing.JLabel();
+        lblExpHoriz = new javax.swing.JLabel();
+        btnCalc5 = new javax.swing.JButton();
+        btnCalc6 = new javax.swing.JButton();
+        btnCalc7 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 247, 241));
         setTitle("Parametros Neuromusculares");
@@ -658,30 +669,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Resultado:");
-
-        btnCalc1.setText("Calcular");
-        btnCalc1.setEnabled(false);
-        btnCalc1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc1ActionPerformed(evt);
-            }
-        });
-
         cmbIsoBraco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Mathews - Teste de elevação vertical (barra)" }));
         cmbIsoBraco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbIsoBracoActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("Resultado:");
-
-        btnCalc2.setText("Calcular");
-        btnCalc2.setEnabled(false);
-        btnCalc2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc2ActionPerformed(evt);
             }
         });
 
@@ -693,36 +684,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel7.setText("Resultado:");
-
-        txtIsoPeito.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIsoPeito.setEnabled(false);
-
-        btnCalc3.setText("Calcular");
-        btnCalc3.setEnabled(false);
-        btnCalc3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc3ActionPerformed(evt);
-            }
-        });
-
         cmbIsoPerna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Almeida - Teste de extensão de pernas (agachamento)" }));
         cmbIsoPerna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbIsoPernaActionPerformed(evt);
-            }
-        });
-
-        txtIsoPerna.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIsoPerna.setEnabled(false);
-
-        jLabel13.setText("Resultado:");
-
-        btnCalc4.setText("Calcular");
-        btnCalc4.setEnabled(false);
-        btnCalc4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc4ActionPerformed(evt);
             }
         });
 
@@ -748,22 +713,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCalc3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCalc1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCalc2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCalc4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(cmbIsoPeito, 0, 405, Short.MAX_VALUE)
                             .addComponent(cmbIsoBraco, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbIsoAbs, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -771,11 +724,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(348, 348, 348))
-                            .addComponent(cmbIsoPerna, 0, 404, Short.MAX_VALUE))))
+                        .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -784,41 +733,23 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(btnCalc1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(btnCalc2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(btnCalc3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(btnCalc4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(740, 20, 539, 262);
+        jPanel1.setBounds(1140, 20, 539, 226);
 
         jPanel6.setBackground(new java.awt.Color(204, 255, 204));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Testes de Força Explosiva"));
@@ -830,46 +761,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel16.setText("Arremeço:");
-
-        txtExpBraco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtExpBraco.setEnabled(false);
-
-        jLabel17.setText("Classificação:");
-
-        lblExpBraco.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblExpBraco.setText("Não calculado");
-
-        btnCalc5.setText("Calcular");
-        btnCalc5.setEnabled(false);
-        btnCalc5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc5ActionPerformed(evt);
-            }
-        });
-
-        jLabel19.setText("Altura do Salto:");
-
         cmbExpVert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de salto vertical" }));
         cmbExpVert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbExpVertActionPerformed(evt);
-            }
-        });
-
-        txtExpVert.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtExpVert.setEnabled(false);
-
-        jLabel20.setText("Classificação:");
-
-        lblExpVert.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblExpVert.setText("Não calculado");
-
-        btnCalc6.setText("Calcular");
-        btnCalc6.setEnabled(false);
-        btnCalc6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc6ActionPerformed(evt);
             }
         });
 
@@ -879,30 +774,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 cmbExpHorizActionPerformed(evt);
             }
         });
-
-        jLabel22.setText("Distância do Salto:");
-
-        txtExpHoriz.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtExpHoriz.setEnabled(false);
-
-        jLabel23.setText("Classificação:");
-
-        lblExpHoriz.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblExpHoriz.setText("Não calculado");
-
-        btnCalc7.setText("Calcular");
-        btnCalc7.setEnabled(false);
-        btnCalc7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc7ActionPerformed(evt);
-            }
-        });
-
-        jLabel28.setText("m");
-
-        jLabel29.setText("cm");
-
-        jLabel30.setText("m");
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel32.setText("Braços");
@@ -921,61 +792,18 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel16))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(txtExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCalc5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel33)
-                            .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(txtExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCalc6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbExpVert, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addComponent(txtExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel30)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jLabel23)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addComponent(lblExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(lblExpHoriz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnCalc7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(lblExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addComponent(cmbExpHoriz, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -984,42 +812,19 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17)
-                    .addComponent(lblExpBraco)
-                    .addComponent(btnCalc5)
-                    .addComponent(jLabel28))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(lblExpVert)
-                    .addComponent(btnCalc6)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23)
-                    .addComponent(lblExpHoriz)
-                    .addComponent(btnCalc7)
-                    .addComponent(jLabel30)))
+                .addGap(47, 47, 47))
         );
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(692, 312, 539, 181);
+        jPanel6.setBounds(1110, 250, 539, 181);
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Teste de Força Isométrica"));
@@ -1030,30 +835,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 cmbMetSupActionPerformed(evt);
             }
         });
-
-        jLabel25.setText("Tempo:");
-
-        jLabel26.setText("Classificação:");
-
-        lblMetSup.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblMetSup.setText("Não calculado");
-
-        btnCalc8.setText("Calcular");
-        btnCalc8.setEnabled(false);
-        btnCalc8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc8ActionPerformed(evt);
-            }
-        });
-
-        txtMetSup.setBackground(new java.awt.Color(240, 240, 240));
-        try {
-            txtMetSup.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtMetSup.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMetSup.setEnabled(false);
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel35.setText("Membro Superior");
@@ -1068,26 +849,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCalc9.setText("Calcular");
-        btnCalc9.setEnabled(false);
-        btnCalc9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalc9ActionPerformed(evt);
-            }
-        });
-
-        lblMetDors.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lblMetDors.setText("Não calculado");
-
-        jLabel38.setText("Classificação:");
-
-        jLabel39.setText("Centímetros:");
-
-        txtMetDors.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMetDors.setEnabled(false);
-
-        jLabel45.setText("cm");
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1101,36 +862,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                         .addComponent(cmbMetDors, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addContainerGap(17, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel39)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(52, 52, 52)
-                                        .addComponent(jLabel26))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel45)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel38)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCalc8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCalc9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel25))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1139,40 +873,15 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26)
-                    .addComponent(lblMetSup)
-                    .addComponent(btnCalc8)
-                    .addComponent(txtMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(jLabel38)
-                    .addComponent(lblMetDors)
-                    .addComponent(btnCalc9)
-                    .addComponent(txtMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel45))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel7);
-        jPanel7.setBounds(520, 510, 539, 130);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/sair30x30.png"))); // NOI18N
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(2720, 602, 109, 39);
+        jPanel7.setBounds(1060, 450, 539, 130);
 
         btnMedSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/salvar30x30.png"))); // NOI18N
         btnMedSalvar.setText("Salvar e Avançar");
@@ -1182,78 +891,40 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnMedSalvar);
-        btnMedSalvar.setBounds(2835, 602, 149, 39);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Força Absoluta");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 250, 220, 17);
+        btnMedSalvar.setBounds(790, 590, 240, 39);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem20x20.png"))); // NOI18N
         jButton1.setText("Testar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(50, 40, 200, 29);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/barrafixa15x22.png"))); // NOI18N
         jButton3.setText("Testar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(50, 120, 200, 29);
-
-        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("Flexão de Braços");
-        getContentPane().add(jLabel37);
-        jLabel37.setBounds(450, 210, 260, 17);
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/flexao25x13.png"))); // NOI18N
         jButton4.setText("Testar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4);
         jButton4.setBounds(50, 200, 200, 29);
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Classificação:");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(490, 240, 100, 17);
-
-        lblIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblIsoPeito.setForeground(new java.awt.Color(255, 153, 0));
-        lblIsoPeito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIsoPeito.setText("Não calculado");
-        getContentPane().add(lblIsoPeito);
-        lblIsoPeito.setBounds(580, 240, 120, 17);
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setText("Agachamento");
-        getContentPane().add(jLabel42);
-        jLabel42.setBounds(470, 310, 200, 17);
-
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/agachamento20x25.png"))); // NOI18N
-        jButton5.setText("Testar");
-        getContentPane().add(jButton5);
-        jButton5.setBounds(50, 280, 200, 29);
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Classificação:");
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(480, 340, 120, 17);
-
-        lblIsoPerna.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblIsoPerna.setForeground(new java.awt.Color(255, 153, 0));
-        lblIsoPerna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIsoPerna.setText("Não calculado");
-        getContentPane().add(lblIsoPerna);
-        lblIsoPerna.setBounds(560, 340, 131, 17);
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 51, 153));
@@ -1280,142 +951,714 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel44);
         jLabel44.setBounds(0, 0, 280, 640);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel9.setBackground(new java.awt.Color(0, 51, 204));
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Abdominal");
+        painelIsotonico.setBackground(new java.awt.Color(255, 255, 255));
+        painelIsotonico.setForeground(new java.awt.Color(0, 0, 102));
+        painelIsotonico.setLayout(null);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Resultado:");
+        painelIsotonico.add(jLabel12);
+        jLabel12.setBounds(20, 80, 65, 32);
 
         lblIsoAbs.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblIsoAbs.setForeground(new java.awt.Color(255, 153, 0));
+        lblIsoAbs.setForeground(new java.awt.Color(0, 0, 102));
         lblIsoAbs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoAbs.setText("Não calculado");
+        painelIsotonico.add(lblIsoAbs);
+        lblIsoAbs.setBounds(90, 120, 150, 32);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Classificação:");
+        painelIsotonico.add(jLabel15);
+        jLabel15.setBounds(10, 120, 79, 32);
 
+        txtIsoAbs.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtIsoAbs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIsoAbs.setEnabled(false);
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("Barra Fixa");
+        painelIsotonico.add(txtIsoAbs);
+        txtIsoAbs.setBounds(110, 80, 60, 32);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Resultado:");
+        painelIsotonico.add(jLabel11);
+        jLabel11.setBounds(20, 200, 65, 32);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 51));
         jLabel18.setText("Classificação:");
+        painelIsotonico.add(jLabel18);
+        jLabel18.setBounds(10, 240, 79, 32);
 
         lblIsoBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblIsoBraco.setForeground(new java.awt.Color(255, 153, 0));
+        lblIsoBraco.setForeground(new java.awt.Color(0, 0, 102));
         lblIsoBraco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIsoBraco.setText("Não calculado");
+        painelIsotonico.add(lblIsoBraco);
+        lblIsoBraco.setBounds(90, 240, 150, 32);
 
+        txtIsoBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtIsoBraco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIsoBraco.setEnabled(false);
+        painelIsotonico.add(txtIsoBraco);
+        txtIsoBraco.setBounds(110, 200, 60, 32);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel15)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(txtIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(jSeparator1)
-            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jSeparator2)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel4.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel24.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Barra Fixa");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel18))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblIsoBraco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(txtIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(lblIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(lblIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 458, Short.MAX_VALUE))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(270, 0, 230, 630);
+        painelIsotonico.add(jPanel4);
+        jPanel4.setBounds(0, 160, 240, 30);
+
+        jPanel5.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel27.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Flexão de Braços");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsotonico.add(jPanel5);
+        jPanel5.setBounds(0, 280, 240, 30);
+
+        lblIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIsoPeito.setForeground(new java.awt.Color(0, 0, 102));
+        lblIsoPeito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIsoPeito.setText("Não calculado");
+        painelIsotonico.add(lblIsoPeito);
+        lblIsoPeito.setBounds(90, 360, 150, 32);
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel40.setText("Classificação:");
+        painelIsotonico.add(jLabel40);
+        jLabel40.setBounds(10, 360, 79, 32);
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel41.setText("Resultado:");
+        painelIsotonico.add(jLabel41);
+        jLabel41.setBounds(20, 320, 65, 32);
+
+        txtIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIsoPeito.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIsoPeito.setEnabled(false);
+        painelIsotonico.add(txtIsoPeito);
+        txtIsoPeito.setBounds(110, 320, 60, 32);
+
+        jPanel3.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel9.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Abdominal");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsotonico.add(jPanel3);
+        jPanel3.setBounds(0, 40, 240, 30);
+
+        jPanel8.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel37.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Agachamento");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsotonico.add(jPanel8);
+        jPanel8.setBounds(0, 400, 240, 30);
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel43.setText("Classificação:");
+        painelIsotonico.add(jLabel43);
+        jLabel43.setBounds(10, 480, 79, 32);
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel49.setText("Resultado:");
+        painelIsotonico.add(jLabel49);
+        jLabel49.setBounds(20, 440, 65, 32);
+
+        lblIsoPerna.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIsoPerna.setForeground(new java.awt.Color(0, 0, 102));
+        lblIsoPerna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIsoPerna.setText("Não calculado");
+        painelIsotonico.add(lblIsoPerna);
+        lblIsoPerna.setBounds(90, 480, 150, 32);
+
+        txtIsoPerna.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIsoPerna.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIsoPerna.setEnabled(false);
+        painelIsotonico.add(txtIsoPerna);
+        txtIsoPerna.setBounds(110, 440, 60, 32);
+
+        btnCalc1.setText("OK");
+        btnCalc1.setEnabled(false);
+        btnCalc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc1ActionPerformed(evt);
+            }
+        });
+        painelIsotonico.add(btnCalc1);
+        btnCalc1.setBounds(180, 80, 50, 32);
+
+        btnCalc2.setText("OK");
+        btnCalc2.setEnabled(false);
+        btnCalc2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc2ActionPerformed(evt);
+            }
+        });
+        painelIsotonico.add(btnCalc2);
+        btnCalc2.setBounds(180, 200, 50, 32);
+
+        btnCalc3.setText("OK");
+        btnCalc3.setEnabled(false);
+        btnCalc3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc3ActionPerformed(evt);
+            }
+        });
+        painelIsotonico.add(btnCalc3);
+        btnCalc3.setBounds(180, 320, 50, 32);
+
+        btnCalc4.setText("OK");
+        btnCalc4.setEnabled(false);
+        btnCalc4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc4ActionPerformed(evt);
+            }
+        });
+        painelIsotonico.add(btnCalc4);
+        btnCalc4.setBounds(180, 440, 50, 32);
+
+        jPanel20.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel71.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel71.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel71.setText("TESTES DE FORÇA ISOTÔNICA");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsotonico.add(jPanel20);
+        jPanel20.setBounds(0, 0, 240, 30);
+
+        jPanel23.setBackground(new java.awt.Color(0, 51, 51));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        painelIsotonico.add(jPanel23);
+        jPanel23.setBounds(0, 520, 240, 30);
+
+        getContentPane().add(painelIsotonico);
+        painelIsotonico.setBounds(270, 0, 240, 630);
+
+        painelIsometrico.setBackground(new java.awt.Color(255, 255, 255));
+        painelIsometrico.setForeground(new java.awt.Color(0, 0, 102));
+        painelIsometrico.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Resultado:");
+        painelIsometrico.add(jLabel14);
+        jLabel14.setBounds(16, 80, 65, 32);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Classificação:");
+        painelIsometrico.add(jLabel21);
+        jLabel21.setBounds(6, 120, 79, 32);
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel42.setText("Resultado:");
+        painelIsometrico.add(jLabel42);
+        jLabel42.setBounds(16, 200, 65, 32);
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel50.setText("Classificação:");
+        painelIsometrico.add(jLabel50);
+        jLabel50.setBounds(6, 240, 79, 32);
+
+        jPanel10.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel51.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setText("Membros Inferiores");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsometrico.add(jPanel10);
+        jPanel10.setBounds(0, 160, 240, 30);
+
+        jPanel12.setBackground(new java.awt.Color(0, 51, 51));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        painelIsometrico.add(jPanel12);
+        jPanel12.setBounds(0, 280, 240, 30);
+
+        jPanel13.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel55.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setText("Membros Superiores");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsometrico.add(jPanel13);
+        jPanel13.setBounds(0, 40, 240, 30);
+
+        jPanel22.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel73.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel73.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel73.setText("TESTES DE FORÇA ISOMÉTRICA");
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel73, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelIsometrico.add(jPanel22);
+        jPanel22.setBounds(0, 0, 240, 30);
+
+        txtMetSup.setBackground(new java.awt.Color(240, 240, 240));
+        try {
+            txtMetSup.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtMetSup.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtMetSup.setEnabled(false);
+        painelIsometrico.add(txtMetSup);
+        txtMetSup.setBounds(82, 80, 60, 32);
+
+        txtMetDors.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtMetDors.setEnabled(false);
+        painelIsometrico.add(txtMetDors);
+        txtMetDors.setBounds(82, 200, 60, 32);
+
+        jLabel45.setText("m:s");
+        painelIsometrico.add(jLabel45);
+        jLabel45.setBounds(145, 100, 20, 14);
+
+        jLabel68.setText("cm");
+        painelIsometrico.add(jLabel68);
+        jLabel68.setBounds(145, 220, 13, 14);
+
+        lblMetSup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMetSup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMetSup.setText("Não calculado");
+        painelIsometrico.add(lblMetSup);
+        lblMetSup.setBounds(90, 120, 150, 32);
+
+        lblMetDors.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMetDors.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMetDors.setText("Não calculado");
+        painelIsometrico.add(lblMetDors);
+        lblMetDors.setBounds(80, 240, 160, 32);
+
+        btnCalc8.setText("OK");
+        btnCalc8.setEnabled(false);
+        btnCalc8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc8ActionPerformed(evt);
+            }
+        });
+        painelIsometrico.add(btnCalc8);
+        btnCalc8.setBounds(170, 80, 60, 32);
+
+        btnCalc9.setText("OK");
+        btnCalc9.setEnabled(false);
+        btnCalc9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc9ActionPerformed(evt);
+            }
+        });
+        painelIsometrico.add(btnCalc9);
+        btnCalc9.setBounds(170, 200, 60, 32);
+
+        getContentPane().add(painelIsometrico);
+        painelIsometrico.setBounds(790, 0, 240, 580);
+
+        painelExplosivo.setBackground(new java.awt.Color(255, 255, 255));
+        painelExplosivo.setForeground(new java.awt.Color(0, 0, 102));
+        painelExplosivo.setLayout(null);
+
+        jLabel59.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel59.setText("Arremeço:");
+        painelExplosivo.add(jLabel59);
+        jLabel59.setBounds(22, 80, 64, 32);
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel60.setText("Classificação:");
+        painelExplosivo.add(jLabel60);
+        jLabel60.setBounds(10, 120, 79, 32);
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel61.setText("Altura:");
+        painelExplosivo.add(jLabel61);
+        jLabel61.setBounds(48, 200, 40, 32);
+
+        jLabel62.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel62.setText("Classificação:");
+        painelExplosivo.add(jLabel62);
+        jLabel62.setBounds(10, 240, 79, 32);
+
+        jPanel16.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel63.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel63.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel63.setText("Impulso Vertical");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel16);
+        jPanel16.setBounds(0, 160, 240, 30);
+
+        jPanel17.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel64.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel64.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setText("Impulso Horizontal");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel17);
+        jPanel17.setBounds(0, 280, 240, 30);
+
+        jLabel65.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel65.setText("Classificação:");
+        painelExplosivo.add(jLabel65);
+        jLabel65.setBounds(10, 360, 79, 32);
+
+        jLabel66.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel66.setText("Distância:");
+        painelExplosivo.add(jLabel66);
+        jLabel66.setBounds(30, 320, 59, 32);
+
+        jPanel18.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel67.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel67.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel67.setText("Braços");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel18);
+        jPanel18.setBounds(0, 40, 240, 30);
+
+        jPanel19.setBackground(new java.awt.Color(0, 51, 51));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel19);
+        jPanel19.setBounds(0, 400, 240, 30);
+
+        jPanel21.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel72.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel72.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel72.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel72.setText("TESTES DE FORÇA EXPLOSIVA");
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel21);
+        jPanel21.setBounds(0, 0, 240, 30);
+
+        txtExpBraco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtExpBraco.setEnabled(false);
+        painelExplosivo.add(txtExpBraco);
+        txtExpBraco.setBounds(100, 80, 60, 32);
+
+        jLabel28.setText("m");
+        painelExplosivo.add(jLabel28);
+        jLabel28.setBounds(163, 100, 8, 14);
+
+        txtExpVert.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtExpVert.setEnabled(false);
+        painelExplosivo.add(txtExpVert);
+        txtExpVert.setBounds(100, 200, 60, 32);
+
+        jLabel29.setText("cm");
+        painelExplosivo.add(jLabel29);
+        jLabel29.setBounds(163, 220, 13, 14);
+
+        txtExpHoriz.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtExpHoriz.setEnabled(false);
+        painelExplosivo.add(txtExpHoriz);
+        txtExpHoriz.setBounds(100, 320, 60, 32);
+
+        jLabel30.setText("m");
+        painelExplosivo.add(jLabel30);
+        jLabel30.setBounds(163, 340, 8, 14);
+
+        lblExpBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblExpBraco.setForeground(new java.awt.Color(0, 0, 102));
+        lblExpBraco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExpBraco.setText("Não calculado");
+        painelExplosivo.add(lblExpBraco);
+        lblExpBraco.setBounds(89, 120, 150, 32);
+
+        lblExpVert.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblExpVert.setForeground(new java.awt.Color(0, 0, 102));
+        lblExpVert.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExpVert.setText("Não calculado");
+        painelExplosivo.add(lblExpVert);
+        lblExpVert.setBounds(90, 240, 150, 32);
+
+        lblExpHoriz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblExpHoriz.setForeground(new java.awt.Color(0, 0, 102));
+        lblExpHoriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExpHoriz.setText("Não calculado");
+        painelExplosivo.add(lblExpHoriz);
+        lblExpHoriz.setBounds(90, 360, 150, 32);
+
+        btnCalc5.setText("OK");
+        btnCalc5.setEnabled(false);
+        btnCalc5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc5ActionPerformed(evt);
+            }
+        });
+        painelExplosivo.add(btnCalc5);
+        btnCalc5.setBounds(180, 80, 50, 32);
+
+        btnCalc6.setText("OK");
+        btnCalc6.setEnabled(false);
+        btnCalc6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc6ActionPerformed(evt);
+            }
+        });
+        painelExplosivo.add(btnCalc6);
+        btnCalc6.setBounds(180, 200, 50, 32);
+
+        btnCalc7.setText("OK");
+        btnCalc7.setEnabled(false);
+        btnCalc7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalc7ActionPerformed(evt);
+            }
+        });
+        painelExplosivo.add(btnCalc7);
+        btnCalc7.setBounds(180, 320, 50, 32);
+
+        getContentPane().add(painelExplosivo);
+        painelExplosivo.setBounds(530, 0, 240, 630);
 
         setBounds(0, 0, 3000, 670);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int adicionar = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
-
-        if (adicionar == JOptionPane.YES_OPTION) {
-            telaAvaNeuromuscular = null;
-            TelaAvaNeuromuscular.this.dispose(); //metodo para fechar uma unica janela
-        } else {
-
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnMedSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedSalvarActionPerformed
         int adicionar = JOptionPane.showConfirmDialog(null, "Deseja Salvar as alterações?", "Atenção", JOptionPane.YES_NO_OPTION);
 
         if (adicionar == JOptionPane.YES_OPTION) {
-            
+
             incluirneuro();
             telaAvaNeuromuscular = null;
             TelaAvaNeuromuscular.this.dispose();
@@ -1720,6 +1963,27 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnCalc9ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        painelIsometrico.setVisible(false);
+        painelExplosivo.setVisible(false);
+        painelIsotonico.setVisible(true);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        painelIsometrico.setVisible(false);
+        painelExplosivo.setLocation(270, 0);//setando o campo para o local certo
+        painelExplosivo.setVisible(true);
+        painelIsotonico.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        painelIsometrico.setLocation(270, 0);//setando o campo para o local do certo
+        painelIsometrico.setVisible(true);
+        painelExplosivo.setVisible(false);
+        painelIsotonico.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalc1;
@@ -1742,28 +2006,16 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JComboBox<String> cmbMetDors;
     public static javax.swing.JComboBox<String> cmbMetSup;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -1774,31 +2026,59 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     public static javax.swing.JLabel lblExpBraco;
     public static javax.swing.JLabel lblExpHoriz;
     public static javax.swing.JLabel lblExpVert;
@@ -1808,6 +2088,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JLabel lblIsoPerna;
     public static javax.swing.JLabel lblMetDors;
     public static javax.swing.JLabel lblMetSup;
+    private javax.swing.JPanel painelExplosivo;
+    private javax.swing.JPanel painelIsometrico;
+    private javax.swing.JPanel painelIsotonico;
     private javax.swing.JTextArea txtExecucao;
     public static javax.swing.JTextField txtExpBraco;
     public static javax.swing.JTextField txtExpHoriz;
