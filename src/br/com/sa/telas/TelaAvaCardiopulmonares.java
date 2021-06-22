@@ -2074,12 +2074,12 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
                     .addComponent(cmbLac, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAjuda3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLacCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelLactatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtLacTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSairAlatica3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnSairAlatica3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLacCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -3043,28 +3043,28 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
         painelOrientacao.setVisible(true);
         painel = "painelAlatico";
         painelAlatico.setVisible(false);
-        
+
     }//GEN-LAST:event_pbnAjuda0ActionPerformed
 
     private void btnAjuda3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda3ActionPerformed
         painelOrientacao.setVisible(true);
         painel = "painelLactato";
         painelLactato.setVisible(false);
-        
+
     }//GEN-LAST:event_btnAjuda3ActionPerformed
 
     private void btnAjuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda2ActionPerformed
         painelOrientacao.setVisible(true);
         painel = "painelLatico";
         painelLatico.setVisible(false);
-        
+
     }//GEN-LAST:event_btnAjuda2ActionPerformed
 
     private void btnAjuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda1ActionPerformed
         painelOrientacao.setVisible(true);
         painel = "painelAerobico";
         painelAerobico.setVisible(false);
-        
+
     }//GEN-LAST:event_btnAjuda1ActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
@@ -3111,7 +3111,7 @@ public class TelaAvaCardiopulmonares extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnMedSalvarActionPerformed
 
     private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
-          int adicionar = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
+        int adicionar = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
 
         if (adicionar == JOptionPane.YES_OPTION) {
             telaAvaCardiopulmonares = null;

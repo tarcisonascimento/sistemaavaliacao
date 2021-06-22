@@ -1929,13 +1929,13 @@
                       <Component id="btnAjuda3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="48" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnLacCalc" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jLabel41" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="txtLacTemp" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="btnSairAlatica3" alignment="3" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="btnLacCalc" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>

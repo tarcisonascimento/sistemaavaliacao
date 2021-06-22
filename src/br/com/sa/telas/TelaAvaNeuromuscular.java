@@ -12,6 +12,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     Connection conexao = null;//usando o metodo de conexao e atribuindo a conexao limpa para iniciar
     PreparedStatement pst = null; //usado para preparar a conexao com o banco de dados
     ResultSet rs = null;//exibe o resultado das instruçoes sql que sera usado no java
+    int fecha = 1;
 
     //variaveis de informaçoes importantes do cliente
     public String sexo;
@@ -436,6 +437,34 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         }
     }
 
+    public void ocultarpanel() {
+
+        if (painelIsotonico.isVisible()) {
+            painelProtIso520.setVisible(false);
+        }
+        if (painelExplosivo.isVisible()) {
+            painelProtoExp520.setVisible(false);
+        }
+        if (painelIsometrico.isVisible()) {
+            painelProtoMet520.setVisible(false);
+        }
+
+    }
+
+    public void mostrarrpanel() {
+
+        if (painelIsotonico.isVisible()) {
+            painelProtIso520.setVisible(true);
+        }
+        if (painelExplosivo.isVisible()) {
+            painelProtoExp520.setVisible(true);
+        }
+        if (painelIsometrico.isVisible()) {
+            painelProtoMet520.setVisible(true);
+        }
+
+    }
+
     public TelaAvaNeuromuscular() {
         initComponents();
         conexao = ModuloConexao.conector();//devese iniciar a conexao sempre pelo construtor antes de realizar uma consulta
@@ -445,7 +474,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel11 = new javax.swing.JPanel();
+        painelOrientacao = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtObjetivo = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -454,27 +483,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtOrientacoes = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         txtExecucao = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        cmbIsoAbs = new javax.swing.JComboBox<>();
-        cmbIsoBraco = new javax.swing.JComboBox<>();
-        cmbIsoPeito = new javax.swing.JComboBox<>();
-        cmbIsoPerna = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        cmbExpBraco = new javax.swing.JComboBox<>();
-        cmbExpVert = new javax.swing.JComboBox<>();
-        cmbExpHoriz = new javax.swing.JComboBox<>();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        cmbMetSup = new javax.swing.JComboBox<>();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        cmbMetDors = new javax.swing.JComboBox<>();
+        btnSairAlatica4 = new javax.swing.JButton();
         btnMedSalvar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -482,7 +491,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
         painelIsotonico = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         lblIsoAbs = new javax.swing.JLabel();
@@ -515,6 +523,20 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jPanel20 = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
+        painelProtIso520 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        cmbIsoAbs = new javax.swing.JComboBox<>();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        cmbIsoBraco = new javax.swing.JComboBox<>();
+        jPanel27 = new javax.swing.JPanel();
+        cmbIsoPeito = new javax.swing.JComboBox<>();
+        jPanel28 = new javax.swing.JPanel();
+        cmbIsoPerna = new javax.swing.JComboBox<>();
+        btnAjuda8 = new javax.swing.JButton();
         painelIsometrico = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -563,17 +585,56 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         btnCalc5 = new javax.swing.JButton();
         btnCalc6 = new javax.swing.JButton();
         btnCalc7 = new javax.swing.JButton();
+        painelProtoExp520 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        cmbExpBraco = new javax.swing.JComboBox<>();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        cmbExpVert = new javax.swing.JComboBox<>();
+        jPanel32 = new javax.swing.JPanel();
+        cmbExpHoriz = new javax.swing.JComboBox<>();
+        btnAjuda2 = new javax.swing.JButton();
+        painelProtoMet520 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        cmbMetSup = new javax.swing.JComboBox<>();
+        jPanel34 = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
+        jPanel35 = new javax.swing.JPanel();
+        cmbMetDors = new javax.swing.JComboBox<>();
+        btnAjuda1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 247, 241));
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Parametros Neuromusculares");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosing(evt);
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
         getContentPane().setLayout(null);
 
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações para execução dos protocolos"));
+        painelOrientacao.setBackground(new java.awt.Color(255, 247, 241));
+        painelOrientacao.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Orientações para execução dos protocolos"));
 
         txtObjetivo.setEditable(false);
         txtObjetivo.setBackground(new java.awt.Color(214, 217, 223));
         txtObjetivo.setColumns(20);
-        txtObjetivo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtObjetivo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtObjetivo.setLineWrap(true);
         txtObjetivo.setRows(3);
         txtObjetivo.setWrapStyleWord(true);
@@ -589,7 +650,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtMaterial.setEditable(false);
         txtMaterial.setBackground(new java.awt.Color(214, 217, 223));
         txtMaterial.setColumns(20);
-        txtMaterial.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtMaterial.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtMaterial.setLineWrap(true);
         txtMaterial.setRows(3);
         txtMaterial.setWrapStyleWord(true);
@@ -605,7 +666,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtOrientacoes.setEditable(false);
         txtOrientacoes.setBackground(new java.awt.Color(214, 217, 223));
         txtOrientacoes.setColumns(20);
-        txtOrientacoes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtOrientacoes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtOrientacoes.setLineWrap(true);
         txtOrientacoes.setRows(3);
         txtOrientacoes.setToolTipText("");
@@ -622,7 +683,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtExecucao.setEditable(false);
         txtExecucao.setBackground(new java.awt.Color(214, 217, 223));
         txtExecucao.setColumns(20);
-        txtExecucao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtExecucao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtExecucao.setLineWrap(true);
         txtExecucao.setRows(3);
         txtExecucao.setWrapStyleWord(true);
@@ -635,19 +696,33 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         txtExecucao.setOpaque(false);
         jScrollPane5.setViewportView(txtExecucao);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+        btnSairAlatica4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSairAlatica4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/delete30x30.png"))); // NOI18N
+        btnSairAlatica4.setText("Sair");
+        btnSairAlatica4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairAlatica4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelOrientacaoLayout = new javax.swing.GroupLayout(painelOrientacao);
+        painelOrientacao.setLayout(painelOrientacaoLayout);
+        painelOrientacaoLayout.setHorizontalGroup(
+            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
             .addComponent(jScrollPane4)
-            .addComponent(jScrollPane5)
+            .addGroup(painelOrientacaoLayout.createSequentialGroup()
+                .addComponent(jScrollPane2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSairAlatica4))
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+        painelOrientacaoLayout.setVerticalGroup(
+            painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelOrientacaoLayout.createSequentialGroup()
+                .addGroup(painelOrientacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                    .addComponent(btnSairAlatica4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -656,242 +731,18 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel11);
-        jPanel11.setBounds(2073, 11, 331, 585);
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Testes de Força Isotônica"));
-
-        cmbIsoAbs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da AAHPER - Teste de flexão do tronco (abdominal)", "Protocolo de Robertson - Teste de flexão do tronco (abdominal)", "Prototocolo de Sidnei & Jeté - Teste de flexão do tronco (abdominal)" }));
-        cmbIsoAbs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbIsoAbsActionPerformed(evt);
-            }
-        });
-
-        cmbIsoBraco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Mathews - Teste de elevação vertical (barra)" }));
-        cmbIsoBraco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbIsoBracoActionPerformed(evt);
-            }
-        });
-
-        cmbIsoPeito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da Eurofit - Flexão de Braços" }));
-        cmbIsoPeito.setPreferredSize(new java.awt.Dimension(398, 20));
-        cmbIsoPeito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbIsoPeitoActionPerformed(evt);
-            }
-        });
-
-        cmbIsoPerna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Almeida - Teste de extensão de pernas (agachamento)" }));
-        cmbIsoPerna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbIsoPernaActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Abdominal");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Braços");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setText("Braços e Peito");
-
-        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel31.setText("Pernas");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbIsoPeito, 0, 405, Short.MAX_VALUE)
-                            .addComponent(cmbIsoBraco, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbIsoAbs, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(1140, 20, 539, 226);
-
-        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Testes de Força Explosiva"));
-
-        cmbExpBraco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de lançar a bola" }));
-        cmbExpBraco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbExpBracoActionPerformed(evt);
-            }
-        });
-
-        cmbExpVert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de salto vertical" }));
-        cmbExpVert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbExpVertActionPerformed(evt);
-            }
-        });
-
-        cmbExpHoriz.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de salto horizontal" }));
-        cmbExpHoriz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbExpHorizActionPerformed(evt);
-            }
-        });
-
-        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel32.setText("Braços");
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel33.setText("Impulso Vertical");
-
-        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel34.setText("Impulso Horizontal");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34))
-                .addGap(47, 47, 47))
-        );
-
-        getContentPane().add(jPanel6);
-        jPanel6.setBounds(1110, 250, 539, 181);
-
-        jPanel7.setBackground(new java.awt.Color(255, 204, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Teste de Força Isométrica"));
-
-        cmbMetSup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da Eurofit - Teste de sustentação vertical" }));
-        cmbMetSup.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMetSupActionPerformed(evt);
-            }
-        });
-
-        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel35.setText("Membro Superior");
-
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel36.setText("Inferior e Dorsal");
-
-        cmbMetDors.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johnson & Nelson - Teste de hiper-extensão" }));
-        cmbMetDors.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMetDorsActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbMetDors, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addContainerGap(17, Short.MAX_VALUE)
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel7);
-        jPanel7.setBounds(1060, 450, 539, 130);
+        getContentPane().add(painelOrientacao);
+        painelOrientacao.setBounds(2501, 0, 520, 585);
 
         btnMedSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/salvar30x30.png"))); // NOI18N
-        btnMedSalvar.setText("Salvar e Avançar");
+        btnMedSalvar.setText("Salvar");
         btnMedSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMedSalvarActionPerformed(evt);
             }
         });
         getContentPane().add(btnMedSalvar);
-        btnMedSalvar.setBounds(790, 590, 240, 39);
+        btnMedSalvar.setBounds(790, 590, 150, 39);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/abdomem20x20.png"))); // NOI18N
@@ -946,10 +797,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jLabel48.setText("Força Isométrica");
         getContentPane().add(jLabel48);
         jLabel48.setBounds(40, 170, 220, 17);
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/fundoneuro256x640.png"))); // NOI18N
-        getContentPane().add(jLabel44);
-        jLabel44.setBounds(0, 0, 280, 640);
 
         painelIsotonico.setBackground(new java.awt.Color(255, 255, 255));
         painelIsotonico.setForeground(new java.awt.Color(0, 0, 102));
@@ -1238,6 +1085,181 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         getContentPane().add(painelIsotonico);
         painelIsotonico.setBounds(270, 0, 240, 630);
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/mostrarTelas46x40.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(50, 260, 200, 50);
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/fundoneuro256x640.png"))); // NOI18N
+        getContentPane().add(jLabel44);
+        jLabel44.setBounds(0, 0, 280, 640);
+
+        painelProtIso520.setBackground(new java.awt.Color(255, 255, 255));
+        painelProtIso520.setForeground(new java.awt.Color(0, 0, 102));
+        painelProtIso520.setLayout(null);
+
+        jPanel24.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbIsoAbs.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmbIsoAbs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da AAHPER - Teste de flexão do tronco (abdominal)", "Protocolo de Robertson - Teste de flexão do tronco (abdominal)", "Prototocolo de Sidnei & Jeté - Teste de flexão do tronco (abdominal)" }));
+        cmbIsoAbs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIsoAbsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(cmbIsoAbs, 0, 405, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cmbIsoAbs, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        painelProtIso520.add(jPanel24);
+        jPanel24.setBounds(0, 40, 450, 54);
+
+        jPanel25.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel74.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel74.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel74.setText("PROTOCOLOS");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelProtIso520.add(jPanel25);
+        jPanel25.setBounds(0, 0, 240, 30);
+
+        jPanel26.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbIsoBraco.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmbIsoBraco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Mathews - Teste de elevação vertical (barra)" }));
+        cmbIsoBraco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIsoBracoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(cmbIsoBraco, 0, 405, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbIsoBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtIso520.add(jPanel26);
+        jPanel26.setBounds(0, 160, 450, 54);
+
+        jPanel27.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbIsoPeito.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmbIsoPeito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da Eurofit - Flexão de Braços" }));
+        cmbIsoPeito.setPreferredSize(new java.awt.Dimension(398, 20));
+        cmbIsoPeito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIsoPeitoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(cmbIsoPeito, 0, 405, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbIsoPeito, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtIso520.add(jPanel27);
+        jPanel27.setBounds(0, 280, 450, 54);
+
+        jPanel28.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbIsoPerna.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmbIsoPerna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Almeida - Teste de extensão de pernas (agachamento)" }));
+        cmbIsoPerna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIsoPernaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbIsoPerna, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtIso520.add(jPanel28);
+        jPanel28.setBounds(0, 400, 450, 54);
+
+        btnAjuda8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAjuda8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/help20x20.png"))); // NOI18N
+        btnAjuda8.setText("Ajuda");
+        btnAjuda8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjuda8ActionPerformed(evt);
+            }
+        });
+        painelProtIso520.add(btnAjuda8);
+        btnAjuda8.setBounds(350, 5, 91, 29);
+
+        getContentPane().add(painelProtIso520);
+        painelProtIso520.setBounds(1070, 0, 450, 580);
+
         painelIsometrico.setBackground(new java.awt.Color(255, 255, 255));
         painelIsometrico.setForeground(new java.awt.Color(0, 0, 102));
         painelIsometrico.setLayout(null);
@@ -1364,9 +1386,11 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         }
         txtMetSup.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMetSup.setEnabled(false);
+        txtMetSup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         painelIsometrico.add(txtMetSup);
         txtMetSup.setBounds(82, 80, 60, 32);
 
+        txtMetDors.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtMetDors.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMetDors.setEnabled(false);
         painelIsometrico.add(txtMetDors);
@@ -1570,6 +1594,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         painelExplosivo.add(jPanel21);
         jPanel21.setBounds(0, 0, 240, 30);
 
+        txtExpBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtExpBraco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtExpBraco.setEnabled(false);
         painelExplosivo.add(txtExpBraco);
@@ -1579,6 +1604,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         painelExplosivo.add(jLabel28);
         jLabel28.setBounds(163, 100, 8, 14);
 
+        txtExpVert.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtExpVert.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtExpVert.setEnabled(false);
         painelExplosivo.add(txtExpVert);
@@ -1588,6 +1614,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         painelExplosivo.add(jLabel29);
         jLabel29.setBounds(163, 220, 13, 14);
 
+        txtExpHoriz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtExpHoriz.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtExpHoriz.setEnabled(false);
         painelExplosivo.add(txtExpHoriz);
@@ -1651,17 +1678,259 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         getContentPane().add(painelExplosivo);
         painelExplosivo.setBounds(530, 0, 240, 630);
 
-        setBounds(0, 0, 3000, 670);
+        painelProtoExp520.setBackground(new java.awt.Color(255, 255, 255));
+        painelProtoExp520.setForeground(new java.awt.Color(0, 0, 102));
+        painelProtoExp520.setLayout(null);
+
+        jPanel29.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbExpBraco.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbExpBraco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de lançar a bola" }));
+        cmbExpBraco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbExpBracoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbExpBraco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtoExp520.add(jPanel29);
+        jPanel29.setBounds(0, 40, 450, 54);
+
+        jPanel30.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel75.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel75.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setText("PROTOCOLOS");
+
+        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+        jPanel30.setLayout(jPanel30Layout);
+        jPanel30Layout.setHorizontalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel75, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel30Layout.setVerticalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelProtoExp520.add(jPanel30);
+        jPanel30.setBounds(0, 0, 240, 30);
+
+        jPanel31.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbExpVert.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbExpVert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de salto vertical" }));
+        cmbExpVert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbExpVertActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbExpVert, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtoExp520.add(jPanel31);
+        jPanel31.setBounds(0, 160, 450, 54);
+
+        jPanel32.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbExpHoriz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbExpHoriz.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johonson & Nelson - Teste de salto horizontal" }));
+        cmbExpHoriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbExpHorizActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbExpHoriz, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtoExp520.add(jPanel32);
+        jPanel32.setBounds(0, 280, 450, 54);
+
+        btnAjuda2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAjuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/help20x20.png"))); // NOI18N
+        btnAjuda2.setText("Ajuda");
+        btnAjuda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjuda2ActionPerformed(evt);
+            }
+        });
+        painelProtoExp520.add(btnAjuda2);
+        btnAjuda2.setBounds(350, 5, 91, 29);
+
+        getContentPane().add(painelProtoExp520);
+        painelProtoExp520.setBounds(1540, 0, 450, 580);
+
+        painelProtoMet520.setBackground(new java.awt.Color(255, 255, 255));
+        painelProtoMet520.setForeground(new java.awt.Color(0, 0, 102));
+        painelProtoMet520.setLayout(null);
+
+        jPanel33.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbMetSup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbMetSup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo da Eurofit - Teste de sustentação vertical" }));
+        cmbMetSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMetSupActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbMetSup, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtoMet520.add(jPanel33);
+        jPanel33.setBounds(0, 40, 450, 54);
+
+        jPanel34.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel76.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel76.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel76.setText("PROTOCOLOS");
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        painelProtoMet520.add(jPanel34);
+        jPanel34.setBounds(0, 0, 240, 30);
+
+        jPanel35.setBackground(new java.awt.Color(0, 41, 103));
+
+        cmbMetDors.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmbMetDors.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um protocolo", "Protocolo de Johnson & Nelson - Teste de hiper-extensão" }));
+        cmbMetDors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMetDorsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(cmbMetDors, 0, 396, Short.MAX_VALUE)
+                .addGap(28, 28, 28))
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cmbMetDors, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelProtoMet520.add(jPanel35);
+        jPanel35.setBounds(0, 160, 450, 54);
+
+        btnAjuda1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAjuda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/help20x20.png"))); // NOI18N
+        btnAjuda1.setText("Ajuda");
+        btnAjuda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjuda1ActionPerformed(evt);
+            }
+        });
+        painelProtoMet520.add(btnAjuda1);
+        btnAjuda1.setBounds(350, 5, 91, 29);
+
+        getContentPane().add(painelProtoMet520);
+        painelProtoMet520.setBounds(2010, 0, 450, 580);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/sair30x30.png"))); // NOI18N
+        jButton5.setText("Sair");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(943, 590, 90, 40);
+
+        setBounds(0, 0, 1065, 670);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMedSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedSalvarActionPerformed
         int adicionar = JOptionPane.showConfirmDialog(null, "Deseja Salvar as alterações?", "Atenção", JOptionPane.YES_NO_OPTION);
 
         if (adicionar == JOptionPane.YES_OPTION) {
-
+            fecha = 0;
             incluirneuro();
-            telaAvaNeuromuscular = null;
-            TelaAvaNeuromuscular.this.dispose();
 
         } else {
 
@@ -1964,6 +2233,14 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCalc9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //paineis de protocolo
+        fecha = 1; //jogando o valor de um pra obrigar a salvar
+        painelProtIso520.setLocation(520, 0);
+        painelProtIso520.setVisible(true);
+        painelProtoExp520.setVisible(false);
+        painelProtoMet520.setVisible(false);
+
+        //paineis de resultado
         painelIsometrico.setVisible(false);
         painelExplosivo.setVisible(false);
         painelIsotonico.setVisible(true);
@@ -1971,6 +2248,14 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //paineis de protocolo
+        fecha = 1; //jogando o valor de um pra obrigar a salvar
+        painelProtoExp520.setLocation(520, 0);
+        painelProtIso520.setVisible(false);
+        painelProtoExp520.setVisible(true);
+        painelProtoMet520.setVisible(false);
+
+        //paineis de resultado
         painelIsometrico.setVisible(false);
         painelExplosivo.setLocation(270, 0);//setando o campo para o local certo
         painelExplosivo.setVisible(true);
@@ -1978,14 +2263,101 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //paineis de protocolo
+        fecha = 1; //jogando o valor de um pra obrigar a salvar
+        painelProtoMet520.setLocation(520, 0);
+        painelProtIso520.setVisible(false);
+        painelProtoExp520.setVisible(false);
+        painelProtoMet520.setVisible(true);
+
+        //paineis de resultado
         painelIsometrico.setLocation(270, 0);//setando o campo para o local do certo
         painelIsometrico.setVisible(true);
         painelExplosivo.setVisible(false);
         painelIsotonico.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //paineis de protocolo
+        painelProtIso520.setVisible(false);
+        painelProtoExp520.setVisible(false);
+        painelProtoMet520.setVisible(false);
+
+        //paineis de resultado
+        painelIsometrico.setLocation(790, 0);
+        painelExplosivo.setLocation(530, 0);//setando o campo para o local do certo
+        painelIsometrico.setVisible(true);
+        painelExplosivo.setVisible(true);
+        painelIsotonico.setVisible(true);   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnSairAlatica4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairAlatica4ActionPerformed
+        painelOrientacao.setVisible(false);// TODO add your handling code here:
+        mostrarrpanel();
+    }//GEN-LAST:event_btnSairAlatica4ActionPerformed
+
+    private void btnAjuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda1ActionPerformed
+        painelOrientacao.setLocation(520, 0);
+        painelOrientacao.setVisible(true);
+        ocultarpanel();
+
+    }//GEN-LAST:event_btnAjuda1ActionPerformed
+
+    private void btnAjuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda2ActionPerformed
+        painelOrientacao.setLocation(520, 0);
+        painelOrientacao.setVisible(true);
+        ocultarpanel();// TODO add your handling code here:
+    }//GEN-LAST:event_btnAjuda2ActionPerformed
+
+    private void btnAjuda8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjuda8ActionPerformed
+        painelOrientacao.setLocation(520, 0);
+        painelOrientacao.setVisible(true);
+        ocultarpanel();// TODO add your handling code here:
+    }//GEN-LAST:event_btnAjuda8ActionPerformed
+
+    private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
+        int fechando = fecha; //aqui estou pegando o valor da variavel do sistema se 0 feha direto se 1 pede confirmaçao
+
+        if (fechando == 1) {
+
+            fechando = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção!", JOptionPane.YES_NO_OPTION);
+
+            if (fechando == JOptionPane.YES_OPTION) {
+
+                telaAvaNeuromuscular = null;
+                TelaAvaNeuromuscular.this.dispose();
+            }
+        } else {
+            telaAvaNeuromuscular = null;
+            TelaAvaNeuromuscular.this.dispose();
+
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_formInternalFrameClosing
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int fechando = fecha; //aqui estou pegando o valor da variavel do sistema se 0 feha direto se 1 pede confirmaçao
+
+        if (fechando == 1) {
+
+            fechando = JOptionPane.showConfirmDialog(null, "Você não salvou! deseja sair?", "Atenção!", JOptionPane.YES_NO_OPTION);
+
+            if (fechando == JOptionPane.YES_OPTION) {
+
+                telaAvaNeuromuscular = null;
+                TelaAvaNeuromuscular.this.dispose();
+            }
+        } else {
+            telaAvaNeuromuscular = null;
+            TelaAvaNeuromuscular.this.dispose();
+
+        }// TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAjuda1;
+    private javax.swing.JButton btnAjuda2;
+    private javax.swing.JButton btnAjuda8;
     private javax.swing.JButton btnCalc1;
     private javax.swing.JButton btnCalc2;
     private javax.swing.JButton btnCalc3;
@@ -1996,6 +2368,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCalc8;
     private javax.swing.JButton btnCalc9;
     public static javax.swing.JButton btnMedSalvar;
+    private javax.swing.JButton btnSairAlatica4;
     public static javax.swing.JComboBox<String> cmbExpBraco;
     public static javax.swing.JComboBox<String> cmbExpHoriz;
     public static javax.swing.JComboBox<String> cmbExpVert;
@@ -2006,8 +2379,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JComboBox<String> cmbMetDors;
     public static javax.swing.JComboBox<String> cmbMetSup;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
@@ -2019,14 +2394,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -2037,12 +2405,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -2055,10 +2421,11 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel16;
@@ -2069,11 +2436,21 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -2091,6 +2468,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JPanel painelExplosivo;
     private javax.swing.JPanel painelIsometrico;
     private javax.swing.JPanel painelIsotonico;
+    private javax.swing.JPanel painelOrientacao;
+    private javax.swing.JPanel painelProtIso520;
+    private javax.swing.JPanel painelProtoExp520;
+    private javax.swing.JPanel painelProtoMet520;
     private javax.swing.JTextArea txtExecucao;
     public static javax.swing.JTextField txtExpBraco;
     public static javax.swing.JTextField txtExpHoriz;
