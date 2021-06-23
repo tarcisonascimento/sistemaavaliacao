@@ -12,7 +12,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     Connection conexao = null;//usando o metodo de conexao e atribuindo a conexao limpa para iniciar
     PreparedStatement pst = null; //usado para preparar a conexao com o banco de dados
     ResultSet rs = null;//exibe o resultado das instruçoes sql que sera usado no java
-    int fecha = 1;
+    int fecha = 0;
 
     //variaveis de informaçoes importantes do cliente
     public String sexo;

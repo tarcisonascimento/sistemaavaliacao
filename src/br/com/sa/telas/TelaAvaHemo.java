@@ -1154,7 +1154,7 @@ public class TelaAvaHemo extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "O Peso é necessário para esse cálculo!");
             return;
         }
-        if (txtVo2.getText().isEmpty()) {
+        if ((txtVo2.getText().isEmpty())||txtVo2.getText().equals("00,00")) {
             JOptionPane.showMessageDialog(null, "O VO²max deve ser obtido antes!");
             return;
         }
