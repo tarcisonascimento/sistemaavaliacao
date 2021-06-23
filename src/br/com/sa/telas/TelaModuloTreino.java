@@ -19,7 +19,6 @@ public class TelaModuloTreino extends javax.swing.JFrame {
     //as variaveis abaixo armazenam os dados do usuario do sistema para reabrir a janela.  
     public static String NomeUso = null, PerfilAcesso = null, DataAcesso = null;
 
-//o metodo abaixo ativa os botoes da avaliação fisica para inicio    
     //infotmaçoes necessarias do cliente
     public static String sexo;
     public static int idade;
@@ -394,7 +393,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvaSairActionPerformed
 
     private void btnAvaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaInicioActionPerformed
-        buscasexo();
+
         
     }//GEN-LAST:event_btnAvaInicioActionPerformed
 
