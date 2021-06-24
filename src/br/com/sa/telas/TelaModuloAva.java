@@ -444,6 +444,9 @@ public class TelaModuloAva extends javax.swing.JFrame {
                 TelaAvaNeuromuscular.cmbMetDors.setSelectedItem(rs.getString(170));
                 TelaAvaNeuromuscular.txtMetDors.setText(rs.getString(171));
                 TelaAvaNeuromuscular.lblMetDors.setText(rs.getString(172));
+                TelaAvaNeuromuscular.txtVelDist.setText(rs.getString("neuro28"));
+                TelaAvaNeuromuscular.txtTempoVeloc.setText(rs.getString("neuro29"));
+                TelaAvaNeuromuscular.lblVel.setText(rs.getString("neuro30"));
             } else {
             }
 

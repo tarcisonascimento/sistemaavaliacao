@@ -4,9 +4,42 @@ package br.com.sa.classes;
 public class CalculoNeuromuscular {
 
     public double idade, peso, estatura, distancia, tempo;
-    double s0, s1;
+    double s0, s1, s2;
     public int quantidade;
     public String sexo, classifica;
+
+    public double velocidade(double temp, double distancia) {
+        //protocolo para calcular a velocidade de deslocamento de um individuo
+        double resultado;
+        distancia = distancia / 100; //passa a distancia de km para metros
+        s0 = (int) temp;
+        s1 = temp - s0;
+
+        System.out.println(s0);
+        System.out.println(s1);
+        System.out.println(s0+s1);
+
+        if (s0 <= 0) {
+            s1 = s1 / 60;
+            System.out.println(s1);
+            resultado = distancia / s1;   //calcula a velocidade
+            resultado = resultado; //massa a velocidade de metros por segundo para km por hora
+            System.out.println(resultado);
+
+        } else {
+
+            s0 = s0 / 60;
+            s1 = s1 / 60;
+            System.out.println(s0);
+            System.out.println(s1);
+            temp = s0 + s1;
+            resultado = distancia / temp;   //calcula a velocidade
+            resultado = resultado * 10; //massa a velocidade de metros por segundo para km por hora
+
+        }
+
+        return resultado;//retorna o resultado
+    }
 
     public void ahper01abs() {
         //Protocolo da AAHPER - Teste de flexão do tronco (abdominal)
@@ -1349,7 +1382,7 @@ public class CalculoNeuromuscular {
 
     public void eurofit02suste() {
         //Protocolo da Eurofit - Teste de sustentação vertical
-        
+
         if (sexo.equals("Masculino")) {
             if (idade <= 10) {
                 if (tempo <= 0.12) {

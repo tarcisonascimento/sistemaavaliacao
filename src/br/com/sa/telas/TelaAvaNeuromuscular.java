@@ -55,7 +55,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
     public void incluirneuro() {
 
-        String sql = "update avaliacao1 set neuro01=?,neuro02=?,neuro03=?,neuro04=?,neuro05=?,neuro06=?,neuro07=?,neuro08=?,neuro09=?,neuro10=?,neuro11=?,neuro12=?,neuro13=?,neuro14=?,neuro15=?,neuro16=?,neuro17=?,neuro18=?,neuro19=?,neuro20=?,neuro21=?,neuro22=?,neuro23=?,neuro24=?,neuro25=?,neuro26=?,neuro27=? where idava=?";
+        String sql = "update avaliacao1 set neuro01=?,neuro02=?,neuro03=?,neuro04=?,neuro05=?,neuro06=?,neuro07=?,neuro08=?,neuro09=?,neuro10=?,neuro11=?,neuro12=?,neuro13=?,neuro14=?,neuro15=?,neuro16=?,neuro17=?,neuro18=?,neuro19=?,neuro20=?,neuro21=?,neuro22=?,neuro23=?,neuro24=?,neuro25=?,neuro26=?,neuro27=?,neuro28=?,neuro29=?,neuro30=? where idava=?";
 
         try {
 
@@ -88,7 +88,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
             pst.setString(25, cmbMetDors.getSelectedItem().toString());
             pst.setString(26, txtMetDors.getText());
             pst.setString(27, lblMetDors.getText());
-            pst.setString(28, TelaModuloAva.lblIdAva.getText());
+            pst.setString(28, txtVelDist.getText());
+            pst.setString(29, txtTempoVeloc.getText());
+            pst.setString(30, lblVel.getText());
+            pst.setString(31, TelaModuloAva.lblIdAva.getText());
 
             int adicionado = pst.executeUpdate();//caso a adição for concluida cai no if
             if (adicionado > 0) {
@@ -551,12 +554,12 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jLabel73 = new javax.swing.JLabel();
         txtMetSup = new javax.swing.JFormattedTextField();
         txtMetDors = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         lblMetSup = new javax.swing.JLabel();
         lblMetDors = new javax.swing.JLabel();
         btnCalc8 = new javax.swing.JButton();
         btnCalc9 = new javax.swing.JButton();
+        jLabel52 = new javax.swing.JLabel();
         painelExplosivo = new javax.swing.JPanel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
@@ -565,26 +568,39 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
-        jLabel64 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel67 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         txtExpBraco = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         txtExpVert = new javax.swing.JTextField();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         txtExpHoriz = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         lblExpBraco = new javax.swing.JLabel();
         lblExpVert = new javax.swing.JLabel();
-        lblExpHoriz = new javax.swing.JLabel();
         btnCalc5 = new javax.swing.JButton();
         btnCalc6 = new javax.swing.JButton();
         btnCalc7 = new javax.swing.JButton();
+        jPanel36 = new javax.swing.JPanel();
+        jLabel69 = new javax.swing.JLabel();
+        txtTempoVeloc = new javax.swing.JFormattedTextField();
+        jLabel45 = new javax.swing.JLabel();
+        btnCalcVeloci = new javax.swing.JButton();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        lblVel = new javax.swing.JLabel();
+        txtVelDist = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        lblExpHoriz = new javax.swing.JLabel();
         painelProtoExp520 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
         cmbExpBraco = new javax.swing.JComboBox<>();
@@ -1396,10 +1412,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         painelIsometrico.add(txtMetDors);
         txtMetDors.setBounds(82, 200, 60, 32);
 
-        jLabel45.setText("m:s");
-        painelIsometrico.add(jLabel45);
-        jLabel45.setBounds(145, 100, 20, 14);
-
         jLabel68.setText("cm");
         painelIsometrico.add(jLabel68);
         jLabel68.setBounds(145, 220, 13, 14);
@@ -1435,6 +1447,10 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         });
         painelIsometrico.add(btnCalc9);
         btnCalc9.setBounds(170, 200, 60, 32);
+
+        jLabel52.setText("m:s");
+        painelIsometrico.add(jLabel52);
+        jLabel52.setBounds(145, 100, 20, 14);
 
         getContentPane().add(painelIsometrico);
         painelIsometrico.setBounds(790, 0, 240, 580);
@@ -1496,28 +1512,29 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         jPanel17.setBackground(new java.awt.Color(0, 41, 103));
 
-        jLabel64.setBackground(new java.awt.Color(0, 51, 204));
-        jLabel64.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel64.setText("Impulso Horizontal");
+        jLabel70.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel70.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel70.setText("Velocidade de Deslocamento");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         painelExplosivo.add(jPanel17);
-        jPanel17.setBounds(0, 280, 240, 30);
+        jPanel17.setBounds(0, 440, 240, 30);
 
         jLabel65.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(51, 51, 51));
@@ -1555,22 +1572,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
 
         painelExplosivo.add(jPanel18);
         jPanel18.setBounds(0, 40, 240, 30);
-
-        jPanel19.setBackground(new java.awt.Color(0, 51, 51));
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        painelExplosivo.add(jPanel19);
-        jPanel19.setBounds(0, 400, 240, 30);
 
         jPanel21.setBackground(new java.awt.Color(0, 51, 51));
 
@@ -1610,6 +1611,32 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         painelExplosivo.add(txtExpVert);
         txtExpVert.setBounds(100, 200, 60, 32);
 
+        jPanel19.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel64.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel64.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setText("Teste de Velocidade");
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        painelExplosivo.add(jPanel19);
+        jPanel19.setBounds(0, 400, 240, 30);
+
         jLabel29.setText("cm");
         painelExplosivo.add(jLabel29);
         jLabel29.setBounds(163, 220, 13, 14);
@@ -1637,13 +1664,6 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         lblExpVert.setText("Não calculado");
         painelExplosivo.add(lblExpVert);
         lblExpVert.setBounds(90, 240, 150, 32);
-
-        lblExpHoriz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblExpHoriz.setForeground(new java.awt.Color(0, 0, 102));
-        lblExpHoriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblExpHoriz.setText("Não calculado");
-        painelExplosivo.add(lblExpHoriz);
-        lblExpHoriz.setBounds(90, 360, 150, 32);
 
         btnCalc5.setText("OK");
         btnCalc5.setEnabled(false);
@@ -1674,6 +1694,99 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         });
         painelExplosivo.add(btnCalc7);
         btnCalc7.setBounds(180, 320, 50, 32);
+
+        jPanel36.setBackground(new java.awt.Color(0, 41, 103));
+
+        jLabel69.setBackground(new java.awt.Color(0, 51, 204));
+        jLabel69.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel69.setText("Impulso Horizontal");
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        painelExplosivo.add(jPanel36);
+        jPanel36.setBounds(0, 280, 240, 30);
+
+        try {
+            txtTempoVeloc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtTempoVeloc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTempoVeloc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        painelExplosivo.add(txtTempoVeloc);
+        txtTempoVeloc.setBounds(80, 530, 70, 32);
+
+        jLabel45.setText("km/h");
+        painelExplosivo.add(jLabel45);
+        jLabel45.setBounds(130, 590, 50, 14);
+
+        btnCalcVeloci.setText("OK");
+        btnCalcVeloci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcVelociActionPerformed(evt);
+            }
+        });
+        painelExplosivo.add(btnCalcVeloci);
+        btnCalcVeloci.setBounds(170, 580, 60, 32);
+
+        jLabel77.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel77.setText("Tempo:");
+        painelExplosivo.add(jLabel77);
+        jLabel77.setBounds(20, 530, 48, 32);
+
+        jLabel78.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel78.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel78.setText("Velocidade:");
+        painelExplosivo.add(jLabel78);
+        jLabel78.setBounds(0, 580, 69, 32);
+
+        lblVel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblVel.setForeground(new java.awt.Color(0, 0, 102));
+        lblVel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVel.setText("0");
+        painelExplosivo.add(lblVel);
+        lblVel.setBounds(70, 580, 60, 32);
+
+        txtVelDist.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtVelDist.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        painelExplosivo.add(txtVelDist);
+        txtVelDist.setBounds(80, 480, 70, 32);
+
+        jLabel79.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel79.setText("Distância:");
+        painelExplosivo.add(jLabel79);
+        jLabel79.setBounds(10, 480, 70, 32);
+
+        jLabel53.setText("ss:ms");
+        painelExplosivo.add(jLabel53);
+        jLabel53.setBounds(153, 550, 50, 14);
+
+        jLabel54.setText("m");
+        painelExplosivo.add(jLabel54);
+        jLabel54.setBounds(153, 500, 30, 14);
+
+        lblExpHoriz.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblExpHoriz.setForeground(new java.awt.Color(0, 0, 102));
+        lblExpHoriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExpHoriz.setText("Não calculado");
+        painelExplosivo.add(lblExpHoriz);
+        lblExpHoriz.setBounds(90, 360, 140, 32);
 
         getContentPane().add(painelExplosivo);
         painelExplosivo.setBounds(530, 0, 240, 630);
@@ -2353,6 +2466,12 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
         }// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void btnCalcVelociActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcVelociActionPerformed
+         CalculoNeuromuscular calc = new CalculoNeuromuscular();
+         double vel = calc.velocidade(Double.parseDouble(txtTempoVeloc.getText().replaceAll(":", ".")), Double.parseDouble(txtVelDist.getText().replaceAll(",", ".")));
+         lblVel.setText(String.format("%.2f", vel));
+    }//GEN-LAST:event_btnCalcVelociActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjuda1;
@@ -2367,6 +2486,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCalc7;
     private javax.swing.JButton btnCalc8;
     private javax.swing.JButton btnCalc9;
+    private javax.swing.JButton btnCalcVeloci;
     public static javax.swing.JButton btnMedSalvar;
     private javax.swing.JButton btnSairAlatica4;
     public static javax.swing.JComboBox<String> cmbExpBraco;
@@ -2407,6 +2527,9 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
@@ -2418,12 +2541,17 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel12;
@@ -2449,6 +2577,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
@@ -2465,6 +2594,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JLabel lblIsoPerna;
     public static javax.swing.JLabel lblMetDors;
     public static javax.swing.JLabel lblMetSup;
+    public static javax.swing.JLabel lblVel;
     private javax.swing.JPanel painelExplosivo;
     private javax.swing.JPanel painelIsometrico;
     private javax.swing.JPanel painelIsotonico;
@@ -2485,5 +2615,7 @@ public class TelaAvaNeuromuscular extends javax.swing.JInternalFrame {
     public static javax.swing.JFormattedTextField txtMetSup;
     private javax.swing.JTextArea txtObjetivo;
     private javax.swing.JTextArea txtOrientacoes;
+    public static javax.swing.JFormattedTextField txtTempoVeloc;
+    public static javax.swing.JTextField txtVelDist;
     // End of variables declaration//GEN-END:variables
 }
