@@ -11,9 +11,17 @@ package br.com.sa.telas;
  */
 public class TelaMacrociclo extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaMacrociclo
-     */
+    public static TelaMacrociclo telaMacro;
+
+    public static TelaMacrociclo getInstancia() {
+        if (telaMacro == null) {
+
+            telaMacro = new TelaMacrociclo();
+
+        }
+        return telaMacro;
+    }
+
     public TelaMacrociclo() {
         initComponents();
     }

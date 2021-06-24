@@ -215,6 +215,52 @@ public class TelaAva extends javax.swing.JInternalFrame {
         }
 
     }
+    
+    
+        public void enviariformacoesclienteTreino() {
+
+        String sql = "select * from clientes where idcli=?";
+        int linha = tblAvaBusca.getSelectedRow();
+        String tarc = tblAvaBusca.getValueAt(linha, 1).toString();//linha é alinha selecionada e 0 é a coluna
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, tarc);
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+
+                int numaceito = 16;//aqui é a quantidade de caracteres que cabe no Jtext
+                int qtdcaracter = rs.getString(2).length();//aqui esta contando quantos caracteres tem no nome
+                int calc = qtdcaracter - numaceito;//aqui subtrai a quantidade aceita de caracteres
+
+                //a estrutura abaixo limita a quantidade de caracteres para nao distorcer o Jlabel
+                if (qtdcaracter >= 16) {
+                    TelaModuloTreino.lblNomeAluno.setText(rs.getString(2).substring(0, rs.getString(2).length() - calc));
+                    TelaModuloTreino.lblMatricula.setText(rs.getString(1));
+                    TelaModuloTreino.lblIdade.setText(rs.getString(10));
+                    sexo = (rs.getString(11));
+                    TelaModuloTreino.sexo = sexo;
+                    TelaModuloTreino.idade = Integer.parseInt(rs.getString(10));
+                    
+
+                } else {
+                    TelaModuloTreino.lblNomeAluno.setText(rs.getString(2));
+                    TelaModuloTreino.lblMatricula.setText(rs.getString(1));
+                    TelaModuloTreino.lblIdade.setText(rs.getString(10));
+                    
+
+                }
+
+            } else {
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro 01" + e);
+        }
+
+    }
 
     private void removerava() {
 
@@ -277,6 +323,41 @@ public class TelaAva extends javax.swing.JInternalFrame {
         }
 
     }
+    
+    
+     public void enviarinformacoesusuarioTreino() {
+
+        String sql = "select * from usuarios where nome like ?";
+
+        try {
+
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, TelaPrincipal.lblUsuario.getText() + "%");
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+
+                int numaceito = 16;//aqui é a quantidade de caracteres que cabe no Jtext
+                int qtdcaracter = rs.getString(2).length();//aqui esta contando quantos caracteres tem no nome
+                int calc = qtdcaracter - numaceito;//aqui subtrai a quantidade aceita de caracteres
+
+                //a estrutura abaixo limita a quantidade de caracteres para nao distorcer o Jlabel
+                if (qtdcaracter >= 16) {
+                    TelaModuloTreino.lblNomeProfessor.setText(rs.getString(2).substring(0, rs.getString(2).length() - calc));
+                    TelaModuloTreino.lblIdProf.setText(rs.getString(1));
+
+                } else {
+
+                    TelaModuloTreino.lblNomeProfessor.setText(rs.getString(2));
+                    TelaModuloTreino.lblIdProf.setText(rs.getString(1));
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro 02" + e);
+        }
+
+    }
 
     //o metodo abaixo envia informaçoes do usuario atual do sistema para reabertura da tela principal
     public void enviainformacoesuso() {
@@ -286,12 +367,20 @@ public class TelaAva extends javax.swing.JInternalFrame {
         TelaModuloAva.DataAcesso = TelaPrincipal.lblData.getText();
 
     }
+    
+        public void enviainformacoesusoTreino() {
+
+        TelaModuloTreino.NomeUso = TelaPrincipal.lblUsuario.getText();
+        TelaModuloTreino.PerfilAcesso = TelaPrincipal.lblPerfil.getText();
+        TelaModuloTreino.DataAcesso = TelaPrincipal.lblData.getText();
+
+    }
     // o conteudo abaixo fecha as janelas abertas
     public void fechatelas (){
 
             TelaUsuarios.telaUsuarios = null;//setando a variavel do campo como nula
             TelaClientes.telaClientes = null;//idem
-            
+            TelaAva.telaAva = null;
             //o comando abaixo fecha as janelas
             TelaPrincipal p = (TelaPrincipal) SwingUtilities.getRoot(this);
             ((Window) p).dispose();
@@ -327,6 +416,7 @@ public class TelaAva extends javax.swing.JInternalFrame {
         txtNumAva = new javax.swing.JTextField();
         btnAbrirAva1 = new javax.swing.JButton();
         btnAbrirAva2 = new javax.swing.JButton();
+        btnModuloTreino = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         setClosable(true);
@@ -378,6 +468,9 @@ public class TelaAva extends javax.swing.JInternalFrame {
             tblAvaBusca.getColumnModel().getColumn(1).setPreferredWidth(30);
         }
 
+        jDesktopPane1.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 61, 806, 91);
+
         txtAvaBusca.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtAvaBusca.setForeground(new java.awt.Color(153, 102, 0));
         txtAvaBusca.addActionListener(new java.awt.event.ActionListener() {
@@ -396,14 +489,20 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 txtAvaBuscaKeyTyped(evt);
             }
         });
+        jDesktopPane1.add(txtAvaBusca);
+        txtAvaBusca.setBounds(158, 11, 328, 32);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 102, 0));
         jLabel1.setText("Buscar Cliente");
+        jDesktopPane1.add(jLabel1);
+        jLabel1.setBounds(56, 18, 98, 17);
 
         txtAvaNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtAvaNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAvaNome.setEnabled(false);
+        jDesktopPane1.add(txtAvaNome);
+        txtAvaNome.setBounds(159, 170, 326, 32);
 
         btnAvaBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/Search.png"))); // NOI18N
         btnAvaBusca.addActionListener(new java.awt.event.ActionListener() {
@@ -411,6 +510,8 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 btnAvaBuscaActionPerformed(evt);
             }
         });
+        jDesktopPane1.add(btnAvaBusca);
+        btnAvaBusca.setBounds(492, 11, 53, 32);
 
         tblAvaAva.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tblAvaAva.setForeground(new java.awt.Color(153, 102, 0));
@@ -435,10 +536,15 @@ public class TelaAva extends javax.swing.JInternalFrame {
             tblAvaAva.getColumnModel().getColumn(1).setPreferredWidth(30);
         }
 
+        jDesktopPane1.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 249, 806, 91);
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 102, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Cliente Selecionado");
+        jDesktopPane1.add(jLabel2);
+        jLabel2.setBounds(10, 177, 145, 17);
 
         btnNovaAvalia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/anamnese30x40.png"))); // NOI18N
         btnNovaAvalia.setText("Nova Avaliação Física");
@@ -449,6 +555,8 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 btnNovaAvaliaActionPerformed(evt);
             }
         });
+        jDesktopPane1.add(btnNovaAvalia);
+        btnNovaAvalia.setBounds(641, 495, 175, 39);
 
         btnAbrirAva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/open-file_40455.png"))); // NOI18N
         btnAbrirAva.setText("Abrir Avaliação Física");
@@ -459,34 +567,48 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 btnAbrirAvaActionPerformed(evt);
             }
         });
+        jDesktopPane1.add(btnAbrirAva);
+        btnAbrirAva.setBounds(435, 495, 175, 39);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 102, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Avaliações Físicas Encontradas Para o Cliente");
+        jDesktopPane1.add(jLabel3);
+        jLabel3.setBounds(10, 226, 806, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 102, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Avaliação Física Selecionada");
+        jDesktopPane1.add(jLabel4);
+        jLabel4.setBounds(10, 358, 200, 17);
 
         txtDataAva.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtDataAva.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtDataAva.setEnabled(false);
+        jDesktopPane1.add(txtDataAva);
+        txtDataAva.setBounds(175, 381, 158, 32);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 102, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Nº");
+        jDesktopPane1.add(jLabel5);
+        jLabel5.setBounds(20, 388, 20, 17);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 102, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Data");
+        jDesktopPane1.add(jLabel6);
+        jLabel6.setBounds(127, 388, 44, 17);
 
         txtNumAva.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtNumAva.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNumAva.setEnabled(false);
+        jDesktopPane1.add(txtNumAva);
+        txtNumAva.setBounds(44, 381, 73, 32);
 
         btnAbrirAva1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/excluir30x30.png"))); // NOI18N
         btnAbrirAva1.setText("Excluir Avaliação Física");
@@ -497,6 +619,8 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 btnAbrirAva1ActionPerformed(evt);
             }
         });
+        jDesktopPane1.add(btnAbrirAva1);
+        btnAbrirAva1.setBounds(10, 495, 175, 39);
 
         btnAbrirAva2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/comparaazul30x30.png"))); // NOI18N
         btnAbrirAva2.setText("Comparar Avaliações");
@@ -507,105 +631,19 @@ public class TelaAva extends javax.swing.JInternalFrame {
                 btnAbrirAva2ActionPerformed(evt);
             }
         });
+        jDesktopPane1.add(btnAbrirAva2);
+        btnAbrirAva2.setBounds(225, 495, 175, 39);
 
-        jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtAvaBusca, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtAvaNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnAvaBusca, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnNovaAvalia, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnAbrirAva, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtDataAva, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtNumAva, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnAbrirAva1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnAbrirAva2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAvaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAvaBusca))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAvaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumAva, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDataAva, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(btnAbrirAva1)
-                                .addGap(40, 40, 40)
-                                .addComponent(btnAbrirAva2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnAbrirAva, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 206, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNovaAvalia, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtAvaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
-                    .addComponent(btnAvaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtAvaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtDataAva, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtNumAva, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAbrirAva)
-                    .addComponent(btnNovaAvalia)
-                    .addComponent(btnAbrirAva1)
-                    .addComponent(btnAbrirAva2))
-                .addGap(45, 45, 45))
-        );
+        btnModuloTreino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/macro46x40.png"))); // NOI18N
+        btnModuloTreino.setText("Módulo Treino");
+        btnModuloTreino.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnModuloTreino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModuloTreinoActionPerformed(evt);
+            }
+        });
+        jDesktopPane1.add(btnModuloTreino);
+        btnModuloTreino.setBounds(641, 438, 175, 39);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -745,13 +783,30 @@ public class TelaAva extends javax.swing.JInternalFrame {
         telaAva = null;        // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameClosing
 
+    private void btnModuloTreinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloTreinoActionPerformed
+         int aval = tblAvaAva.getSelectedRow();
+        if (aval < 0) {
+            JOptionPane.showMessageDialog(null, "(*)Selecione uma avaliação física para Iniciar o MODULO TREINO!");
+        }else {
+            String idaval = tblAvaAva.getValueAt(aval, 2).toString();
+            TelaModuloTreino treino = new TelaModuloTreino();
+            treino.setVisible(true);
+            enviariformacoesclienteTreino();
+            enviarinformacoesusuarioTreino();
+            enviainformacoesusoTreino();
+            TelaModuloTreino.lblIdAva.setText(idaval);
+            fechatelas();
+        }
+    }//GEN-LAST:event_btnModuloTreinoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAbrirAva;
-    private javax.swing.JButton btnAbrirAva1;
-    private javax.swing.JButton btnAbrirAva2;
+    public static javax.swing.JButton btnAbrirAva;
+    public static javax.swing.JButton btnAbrirAva1;
+    public static javax.swing.JButton btnAbrirAva2;
     private javax.swing.JButton btnAvaBusca;
-    private javax.swing.JButton btnNovaAvalia;
+    public static javax.swing.JButton btnModuloTreino;
+    public static javax.swing.JButton btnNovaAvalia;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -7,7 +7,6 @@ import br.com.sa.dal.ModuloConexao;
 import java.awt.Window;
 import javax.swing.SwingUtilities;
 
-
 public class TelaModuloTreino extends javax.swing.JFrame {
 
     Connection conexao = null;//usando o metodo de conexao e atribuindo a conexao limpa para iniciar
@@ -23,7 +22,6 @@ public class TelaModuloTreino extends javax.swing.JFrame {
     public static String sexo;
     public static int idade;
 
-    
     public void buscasexo() {
 
         String sql = "select * from clientes where idcli=?";
@@ -45,7 +43,6 @@ public class TelaModuloTreino extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro" + e);
         }
     }
-    
 
     //o metodo abaixo reabre a tela inicial e envia as informações novamente.
     public void reabretela() {
@@ -78,7 +75,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
     public TelaModuloTreino() {
         initComponents();
         conexao = ModuloConexao.conector();//devese iniciar a conexao sempre pelo construtor antes de realizar uma consulta
-        this.gerenciadorDeJanela = new GerenciadorDeJanelas(DesktopAva);//passar o desktop para dentro da variavel 
+        this.gerenciadorDeJanela = new GerenciadorDeJanelas(DesktopTreino);//passar o desktop para dentro da variavel 
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -95,7 +92,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
         btnAvaSair = new javax.swing.JButton();
         btnAvaInicio = new javax.swing.JButton();
         btnAvaNeuro = new javax.swing.JButton();
-        DesktopAva = new javax.swing.JDesktopPane();
+        DesktopTreino = new javax.swing.JDesktopPane();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -243,15 +240,15 @@ public class TelaModuloTreino extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        DesktopAva.setBackground(new java.awt.Color(255, 247, 241));
-        DesktopAva.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        DesktopTreino.setBackground(new java.awt.Color(255, 247, 241));
+        DesktopTreino.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                DesktopAvaPropertyChange(evt);
+                DesktopTreinoPropertyChange(evt);
             }
         });
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/Fundotelaprincipal.png"))); // NOI18N
-        DesktopAva.add(jLabel5);
+        DesktopTreino.add(jLabel5);
         jLabel5.setBounds(90, 0, 940, 670);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Informações"));
@@ -355,7 +352,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DesktopAva, javax.swing.GroupLayout.DEFAULT_SIZE, 1049, Short.MAX_VALUE))
+                .addComponent(DesktopTreino, javax.swing.GroupLayout.DEFAULT_SIZE, 1049, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,7 +364,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(DesktopAva)
+            .addComponent(DesktopTreino)
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("Módulos");
@@ -394,25 +391,25 @@ public class TelaModuloTreino extends javax.swing.JFrame {
 
     private void btnAvaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaInicioActionPerformed
 
-        
+
     }//GEN-LAST:event_btnAvaInicioActionPerformed
 
     private void btnAvaAnamineseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaAnamineseActionPerformed
-      
+        gerenciadorDeJanela.abrirJanelas(TelaMacrociclo.getInstancia());
     }//GEN-LAST:event_btnAvaAnamineseActionPerformed
 
     private void btnAvaHemoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaHemoActionPerformed
-   
+
     }//GEN-LAST:event_btnAvaHemoActionPerformed
 
     private void btnAvaMedidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaMedidasActionPerformed
-   
-       
+
+
     }//GEN-LAST:event_btnAvaMedidasActionPerformed
 
-    private void DesktopAvaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_DesktopAvaPropertyChange
+    private void DesktopTreinoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_DesktopTreinoPropertyChange
 
-    }//GEN-LAST:event_DesktopAvaPropertyChange
+    }//GEN-LAST:event_DesktopTreinoPropertyChange
 
     private void btnAvaCardioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaCardioActionPerformed
 
@@ -430,9 +427,9 @@ public class TelaModuloTreino extends javax.swing.JFrame {
         int adicionar = JOptionPane.showConfirmDialog(null, "Esta tela esta sendo fechada, deseja continuar?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (adicionar == JOptionPane.YES_OPTION) {
 
-            //reabretela();//chama a tela principal
-
+            reabretela();//chama a tela principal
             //abaixo fecha a tela modulo ava
+            TelaMacrociclo.telaMacro = null;
             TelaModuloTreino comp = (TelaModuloTreino) SwingUtilities.getRoot(this);
             ((Window) comp).dispose();
 
@@ -482,7 +479,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JDesktopPane DesktopAva;
+    public javax.swing.JDesktopPane DesktopTreino;
     public static javax.swing.JButton btnAvaAnaminese;
     public static javax.swing.JButton btnAvaCardio;
     public static javax.swing.JButton btnAvaHemo;
