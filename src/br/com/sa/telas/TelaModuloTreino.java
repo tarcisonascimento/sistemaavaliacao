@@ -44,6 +44,37 @@ public class TelaModuloTreino extends javax.swing.JFrame {
         }
     }
 
+    public void carregainfomacro() {
+        
+        String sql = "select * from avaliacao1 where idava=?";
+        
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, lblIdAva.getText());
+            rs = pst.executeQuery();
+            
+            if (rs.next()){
+            
+            TelaMacrociclo.lblVelocidade.setText(rs.getString("neuro30"));//velocidade de deslocamento
+            TelaMacrociclo.lblExpMs.setText(rs.getString("neuro14"));//força explosiva membos superiores
+            TelaMacrociclo.lblExpMi.setText(rs.getString("neuro17"));//impulso horizontal
+            TelaMacrociclo.lblAla.setText(rs.getString("carala03"));//potencia alatica
+            TelaMacrociclo.lblFlex.setText(rs.getString("postu21"));//Nivel de Flexibilidade
+            TelaMacrociclo.lblVo2.setText(rs.getString("vo2"));//Volume maximo de oxigênio
+            TelaMacrociclo.lblDebito.setText(rs.getString("debcard"));//Debito cardiaco
+            TelaMacrociclo.lblAbd.setText(rs.getString("neuro02"));//resistencia muscular local de abdomem
+            TelaMacrociclo.lblBraco.setText(rs.getString("neuro08"));//resistencia muscular local de membors superiores
+            TelaMacrociclo.lblPerna.setText(rs.getString("neuro11"));//resistencia muscular local de membors infereiores
+            
+            
+            
+            }
+        } catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Erro ao carregar macrociclo\n"+e);
+        }
+    }
+
     //o metodo abaixo reabre a tela inicial e envia as informações novamente.
     public void reabretela() {
 
@@ -396,6 +427,7 @@ public class TelaModuloTreino extends javax.swing.JFrame {
 
     private void btnAvaAnamineseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaAnamineseActionPerformed
         gerenciadorDeJanela.abrirJanelas(TelaMacrociclo.getInstancia());
+        carregainfomacro();
     }//GEN-LAST:event_btnAvaAnamineseActionPerformed
 
     private void btnAvaHemoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaHemoActionPerformed

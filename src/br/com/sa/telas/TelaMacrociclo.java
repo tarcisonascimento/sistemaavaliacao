@@ -56,34 +56,34 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         lblExpMi = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        lblAla = new javax.swing.JLabel();
+        lblFlex = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        lblAla1 = new javax.swing.JLabel();
+        lblBraco = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        lblExpMi1 = new javax.swing.JLabel();
-        lblExpMs1 = new javax.swing.JLabel();
+        lblAbd = new javax.swing.JLabel();
+        lblDebito = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        lblVelocidade1 = new javax.swing.JLabel();
+        lblVo2 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        lblAla2 = new javax.swing.JLabel();
+        lblAla = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        lblAla3 = new javax.swing.JLabel();
+        lblPerna = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        txtDataInicio = new javax.swing.JFormattedTextField();
+        cmbDuracao = new javax.swing.JComboBox<>();
+        cmbObjetivo = new javax.swing.JComboBox<>();
+        cmbMelhoria = new javax.swing.JComboBox<>();
+        btnOk = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -187,11 +187,11 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel17);
         jLabel17.setBounds(250, 160, 40, 14);
 
-        lblAla.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblAla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAla.setText("0");
-        jPanel2.add(lblAla);
-        lblAla.setBounds(210, 160, 40, 15);
+        lblFlex.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblFlex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFlex.setText("0");
+        jPanel2.add(lblFlex);
+        lblFlex.setBounds(210, 160, 40, 15);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Volúme Máximo de Oxigênio:");
@@ -213,11 +213,11 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel18);
         jLabel18.setBounds(40, 270, 170, 14);
 
-        lblAla1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblAla1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAla1.setText("0");
-        jPanel2.add(lblAla1);
-        lblAla1.setBounds(210, 270, 40, 15);
+        lblBraco.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblBraco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBraco.setText("0");
+        jPanel2.add(lblBraco);
+        lblBraco.setBounds(210, 270, 40, 15);
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("repetições");
@@ -229,17 +229,17 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel20);
         jLabel20.setBounds(250, 250, 50, 14);
 
-        lblExpMi1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblExpMi1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblExpMi1.setText("0");
-        jPanel2.add(lblExpMi1);
-        lblExpMi1.setBounds(210, 250, 40, 15);
+        lblAbd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblAbd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAbd.setText("0");
+        jPanel2.add(lblAbd);
+        lblAbd.setBounds(210, 250, 40, 15);
 
-        lblExpMs1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblExpMs1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblExpMs1.setText("0");
-        jPanel2.add(lblExpMs1);
-        lblExpMs1.setBounds(210, 230, 40, 15);
+        lblDebito.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblDebito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDebito.setText("0");
+        jPanel2.add(lblDebito);
+        lblDebito.setBounds(210, 230, 40, 15);
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel21.setText("l/min");
@@ -251,22 +251,22 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel22);
         jLabel22.setBounds(250, 210, 60, 14);
 
-        lblVelocidade1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblVelocidade1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblVelocidade1.setText("0");
-        jPanel2.add(lblVelocidade1);
-        lblVelocidade1.setBounds(210, 210, 40, 15);
+        lblVo2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblVo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVo2.setText("0");
+        jPanel2.add(lblVo2);
+        lblVo2.setBounds(210, 210, 40, 15);
 
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("Capacidade Anaeróbica Alática:");
         jPanel2.add(jLabel23);
         jLabel23.setBounds(40, 140, 170, 14);
 
-        lblAla2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblAla2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAla2.setText("0");
-        jPanel2.add(lblAla2);
-        lblAla2.setBounds(210, 140, 40, 15);
+        lblAla.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblAla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAla.setText("0");
+        jPanel2.add(lblAla);
+        lblAla.setBounds(210, 140, 40, 15);
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel24.setText("panaal");
@@ -278,11 +278,11 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel25);
         jLabel25.setBounds(40, 290, 170, 14);
 
-        lblAla3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblAla3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAla3.setText("0");
-        jPanel2.add(lblAla3);
-        lblAla3.setBounds(210, 290, 40, 15);
+        lblPerna.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblPerna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPerna.setText("0");
+        jPanel2.add(lblPerna);
+        lblPerna.setBounds(210, 290, 40, 15);
 
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel26.setText("repetições");
@@ -310,30 +310,30 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
         jLabel30.setBounds(30, 385, 100, 28);
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataInicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jFormattedTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(jFormattedTextField1);
-        jFormattedTextField1.setBounds(140, 350, 160, 28);
+        txtDataInicio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDataInicio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtDataInicio);
+        txtDataInicio.setBounds(140, 350, 160, 28);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Quadrimestral", "Semestral" }));
-        jPanel2.add(jComboBox1);
-        jComboBox1.setBounds(140, 420, 160, 28);
+        cmbDuracao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Quadrimestral", "Semestral" }));
+        jPanel2.add(cmbDuracao);
+        cmbDuracao.setBounds(140, 420, 160, 28);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Hipertrofia", "Emagrecimento" }));
-        jPanel2.add(jComboBox2);
-        jComboBox2.setBounds(140, 385, 160, 28);
+        cmbObjetivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Hipertrofia", "Emagrecimento" }));
+        jPanel2.add(cmbObjetivo);
+        cmbObjetivo.setBounds(140, 385, 160, 28);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%" }));
-        jPanel2.add(jComboBox3);
-        jComboBox3.setBounds(140, 454, 110, 28);
+        cmbMelhoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%" }));
+        jPanel2.add(cmbMelhoria);
+        cmbMelhoria.setBounds(140, 454, 110, 28);
 
-        jButton1.setText("OK");
-        jPanel2.add(jButton1);
-        jButton1.setBounds(253, 454, 47, 28);
+        btnOk.setText("OK");
+        jPanel2.add(btnOk);
+        btnOk.setBounds(253, 454, 47, 28);
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sa/icones/fundoMacro640x335.png"))); // NOI18N
         jPanel2.add(jLabel31);
@@ -341,16 +341,15 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1032, 643));
 
-        pack();
+        setBounds(0, 0, 1048, 670);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JButton btnOk;
+    public static javax.swing.JComboBox<String> cmbDuracao;
+    public static javax.swing.JComboBox<String> cmbMelhoria;
+    public static javax.swing.JComboBox<String> cmbObjetivo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -386,15 +385,16 @@ public class TelaMacrociclo extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel lblAla;
-    private javax.swing.JLabel lblAla1;
-    private javax.swing.JLabel lblAla2;
-    private javax.swing.JLabel lblAla3;
-    private javax.swing.JLabel lblExpMi;
-    private javax.swing.JLabel lblExpMi1;
-    private javax.swing.JLabel lblExpMs;
-    private javax.swing.JLabel lblExpMs1;
-    private javax.swing.JLabel lblVelocidade;
-    private javax.swing.JLabel lblVelocidade1;
+    public static javax.swing.JLabel lblAbd;
+    public static javax.swing.JLabel lblAla;
+    public static javax.swing.JLabel lblBraco;
+    public static javax.swing.JLabel lblDebito;
+    public static javax.swing.JLabel lblExpMi;
+    public static javax.swing.JLabel lblExpMs;
+    public static javax.swing.JLabel lblFlex;
+    public static javax.swing.JLabel lblPerna;
+    public static javax.swing.JLabel lblVelocidade;
+    public static javax.swing.JLabel lblVo2;
+    public static javax.swing.JFormattedTextField txtDataInicio;
     // End of variables declaration//GEN-END:variables
 }
